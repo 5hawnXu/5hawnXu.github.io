@@ -1,47 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>邮箱验证类注册账户</title>
-    <url>/2021/11/28/Register-accounts-by-email-in-batches/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​	以太坊Kovan测试网的<a href="https://gitter.im/kovan-testnet/faucet">水龙头</a>每天每个账户只能领取0**.**001 ETH（少得可怜！）。由于gitter只能用twitter、gitlab以及GitHub账户进行登录，为了学（hao）知（yang）识（mao），于是想着怎么去大量注册一堆GitHub或者gitlab账户，然后每天通过这些账户去请求Kovan测试币。</p>
-<p>​	大致思路是：获取大量账户&#x3D;》利用这些账户去登录gitter&#x3D;》然后利用api发送信息到gitter频道获取测试币。</p>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="获取大量邮箱"><a href="#获取大量邮箱" class="headerlink" title="获取大量邮箱"></a>获取大量邮箱</h2><p>​	<a href="https://github.com/xjjdog/crazy-email-recv-srv">模拟邮件服务器，批量注册利器</a> 这个仓库用python实现一个邮箱服务器，最开始的想法就是利用这个方式来获取。</p>
-<p>​	实现的批量注册逻辑大概如下：</p>
-<p><img src="15338909254129.jpg"></p>
-<p>​	于是跑到了狗爹上去看了看，鬼使神差的就买了一年的虚拟主机（花了360大洋）。</p>
-<p><img src="image-20211128144121418.png" alt="image-20211128144121418"></p>
-<p>​	购买之后，遇见了第一个问题，点击虚拟主机的管理选项时出现如下情况：</p>
-<p><img src="image-20211128144435303.png" alt="image-20211128144435303"></p>
-<p>​	然后换了QQ浏览器，又出现了另一个问题，登录cPanel的时候提示存在非法内容：</p>
-<p><img src="image-20211128144701839.png" alt="image-20211128144701839"></p>
-<p>​	最后用火狐浏览器终于登上了（狗爹这波真的是）：</p>
-<p><img src="image-20211128145125123.png" alt="image-20211128145125123"></p>
-<p>​	满心欢喜的XFTP、XSHELL链接后，发现我根本没有root权限，想安装个python都不能在&#x2F;usr&#x2F;local里面创建目录，甚至su sudo命令都没了（狗爹你赢了，系统还是Red Hat 4.4.7-23）：</p>
-<p><img src="image-20211128150845028.png" alt="image-20211128150845028"></p>
-<p>​	于是乎，邮箱服务器的计划就这样破灭了。为了不让这360白花了，我还是去看了看服务器的控制台。</p>
-<p><img src="image-20211128151640104.png" alt="image-20211128151640104"></p>
-<p>​	发现一个这个东西：</p>
-<p><img src="image-20211128151716096.png" alt="image-20211128151716096"></p>
-<p>​	这个可以将邮件转发到指定的地址，这不也是先之前那个仓库的效果（真是柳暗花明又一村啊！）：</p>
-<p><img src="image-20211128151736890.png" alt="image-20211128151736890"></p>
-<p><img src="image-20211128151810735.png" alt="image-20211128151810735"></p>
-<h2 id="注册Github账户"><a href="#注册Github账户" class="headerlink" title="注册Github账户"></a>注册Github账户</h2><p>​	由于注册只需要接受邮件即可，那么我们可以输入任意的前缀然后转发到指定邮箱就可以获取验证码，然后理论上就有了无限的邮箱可以用来注册使用了~</p>
-<p>​	于是用GitHub试了试，成功收到了验证码并完成了注册：</p>
-<p><img src="image-20211128152303983.png" alt="image-20211128152303983"></p>
-<p><img src="image-20211128152404918.png" alt="image-20211128152404918"></p>
-<p>​	</p>
-<p>​	自动化注册脚本暂时还没有实现，看后面能不能找到实现方法，现在这样还是有点麻烦。</p>
-<h2 id="使用GitHub账户自动登录gitter"><a href="#使用GitHub账户自动登录gitter" class="headerlink" title="使用GitHub账户自动登录gitter"></a>使用GitHub账户自动登录gitter</h2>]]></content>
-      <categories>
-        <category>杂七杂八</category>
-      </categories>
-      <tags>
-        <tag>email</tag>
-        <tag>服务器</tag>
-        <tag>邮箱注册</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Zeppelin Ethernaut WriteUp</title>
     <url>/2019/11/09/Ethernaut%20WriteUp/</url>
     <content><![CDATA[<h1 id="Zeppelin-Ethernaut-WriteUp"><a href="#Zeppelin-Ethernaut-WriteUp" class="headerlink" title="Zeppelin-Ethernaut-WriteUp"></a><a href="https://ethernaut.openzeppelin.com/">Zeppelin-Ethernaut</a>-WriteUp</h1><p>参考文章：感谢大佬 <a href="https://www.jianshu.com/u/2631d3e59e33">xuing</a></p>
@@ -1173,13 +1132,54 @@ contract Buyer&#123;
 <p>​	</p>
 ]]></content>
       <categories>
-        <category>区块链</category>
+        <category>BlockChain</category>
       </categories>
       <tags>
         <tag>Ethernaut</tag>
         <tag>WriteUp</tag>
         <tag>安全</tag>
         <tag>solidity</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>邮箱验证类注册账户</title>
+    <url>/2021/11/28/Register-accounts-by-email-in-batches/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​	以太坊Kovan测试网的<a href="https://gitter.im/kovan-testnet/faucet">水龙头</a>每天每个账户只能领取0**.**001 ETH（少得可怜！）。由于gitter只能用twitter、gitlab以及GitHub账户进行登录，为了学（hao）知（yang）识（mao），于是想着怎么去大量注册一堆GitHub或者gitlab账户，然后每天通过这些账户去请求Kovan测试币。</p>
+<p>​	大致思路是：获取大量账户&#x3D;》利用这些账户去登录gitter&#x3D;》然后利用api发送信息到gitter频道获取测试币。</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h2 id="获取大量邮箱"><a href="#获取大量邮箱" class="headerlink" title="获取大量邮箱"></a>获取大量邮箱</h2><p>​	<a href="https://github.com/xjjdog/crazy-email-recv-srv">模拟邮件服务器，批量注册利器</a> 这个仓库用python实现一个邮箱服务器，最开始的想法就是利用这个方式来获取。</p>
+<p>​	实现的批量注册逻辑大概如下：</p>
+<p><img src="15338909254129.jpg"></p>
+<p>​	于是跑到了狗爹上去看了看，鬼使神差的就买了一年的虚拟主机（花了360大洋）。</p>
+<p><img src="image-20211128144121418.png" alt="image-20211128144121418"></p>
+<p>​	购买之后，遇见了第一个问题，点击虚拟主机的管理选项时出现如下情况：</p>
+<p><img src="image-20211128144435303.png" alt="image-20211128144435303"></p>
+<p>​	然后换了QQ浏览器，又出现了另一个问题，登录cPanel的时候提示存在非法内容：</p>
+<p><img src="image-20211128144701839.png" alt="image-20211128144701839"></p>
+<p>​	最后用火狐浏览器终于登上了（狗爹这波真的是）：</p>
+<p><img src="image-20211128145125123.png" alt="image-20211128145125123"></p>
+<p>​	满心欢喜的XFTP、XSHELL链接后，发现我根本没有root权限，想安装个python都不能在&#x2F;usr&#x2F;local里面创建目录，甚至su sudo命令都没了（狗爹你赢了，系统还是Red Hat 4.4.7-23）：</p>
+<p><img src="image-20211128150845028.png" alt="image-20211128150845028"></p>
+<p>​	于是乎，邮箱服务器的计划就这样破灭了。为了不让这360白花了，我还是去看了看服务器的控制台。</p>
+<p><img src="image-20211128151640104.png" alt="image-20211128151640104"></p>
+<p>​	发现一个这个东西：</p>
+<p><img src="image-20211128151716096.png" alt="image-20211128151716096"></p>
+<p>​	这个可以将邮件转发到指定的地址，这不也是先之前那个仓库的效果（真是柳暗花明又一村啊！）：</p>
+<p><img src="image-20211128151736890.png" alt="image-20211128151736890"></p>
+<p><img src="image-20211128151810735.png" alt="image-20211128151810735"></p>
+<h2 id="注册Github账户"><a href="#注册Github账户" class="headerlink" title="注册Github账户"></a>注册Github账户</h2><p>​	由于注册只需要接受邮件即可，那么我们可以输入任意的前缀然后转发到指定邮箱就可以获取验证码，然后理论上就有了无限的邮箱可以用来注册使用了~</p>
+<p>​	于是用GitHub试了试，成功收到了验证码并完成了注册：</p>
+<p><img src="image-20211128152303983.png" alt="image-20211128152303983"></p>
+<p><img src="image-20211128152404918.png" alt="image-20211128152404918"></p>
+<p>​	</p>
+<p>​	自动化注册脚本暂时还没有实现，看后面能不能找到实现方法，现在这样还是有点麻烦。</p>
+<h2 id="使用GitHub账户自动登录gitter"><a href="#使用GitHub账户自动登录gitter" class="headerlink" title="使用GitHub账户自动登录gitter"></a>使用GitHub账户自动登录gitter</h2>]]></content>
+      <categories>
+        <category>Others</category>
+      </categories>
+      <tags>
+        <tag>email</tag>
+        <tag>服务器</tag>
+        <tag>邮箱注册</tag>
       </tags>
   </entry>
   <entry>
@@ -1347,11 +1347,348 @@ contract Buyer&#123;
 <h2 id="验证真实IP"><a href="#验证真实IP" class="headerlink" title="验证真实IP"></a>验证真实IP</h2><p>​	找到真实 IP 后 先访问 IP 看看和原站是否一样。 如果不能直接访问，可能做了IP访问限制，可以通过修改hosts再访问网站，测试是否成功。 </p>
 ]]></content>
       <categories>
-        <category>web渗透</category>
+        <category>Security</category>
       </categories>
       <tags>
         <tag>安全</tag>
         <tag>信息收集</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些看起来不错的主题</title>
+    <url>/2023/08/04/hexo-themes/</url>
+    <content><![CDATA[<p><strong>NEXT</strong></p>
+<p><img src="NextSchemes3.png" alt="image"></p>
+<p>具体介绍：<a href="http://theme-next.iissnan.com/">http://theme-next.iissnan.com/</a><br>项目地址：<a href="https://github.com/iissnan/hexo-theme-next/">https://github.com/iissnan/hexo-theme-next/</a></p>
+<p><strong>stellar</strong></p>
+<p><img src="2268589-20210911230942914-1791629455.png" alt="image"></p>
+<p>预览地址：<a href="https://xaoxuu.com/wiki/stellar/#%E7%A4%BA%E4%BE%8B%E5%8D%9A%E5%AE%A2">https://xaoxuu.com/wiki/stellar/#示例博客</a><br>使用介绍：<a href="https://xaoxuu.com/wiki/stellar/">https://xaoxuu.com/wiki/stellar/</a><br>项目地址：<a href="https://github.com/xaoxuu/hexo-theme-stellar">https://github.com/xaoxuu/hexo-theme-stellar</a></p>
+<p><strong>pure</strong></p>
+<p><img src="2268589-20210911232117373-1876501138.png" alt="image"></p>
+<p>预览地址：<a href="https://blog.cofess.com/">https://blog.cofess.com/</a><br>项目地址：<a href="https://github.com/cofess/hexo-theme-pure">https://github.com/cofess/hexo-theme-pure</a></p>
+<p><strong>nexmoe</strong></p>
+<p><img src="2268589-20210911231739654-1341713180.png" alt="image"></p>
+<p>预览地址：<a href="https://nexmoe.com/">https://nexmoe.com/</a><br>项目地址：<a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe">https://github.com/theme-nexmoe/hexo-theme-nexmoe</a></p>
+<p><strong>melody</strong></p>
+<p><img src="2268589-20210911232502000-330052950.png" alt="image"></p>
+<p>预览地址：<a href="https://molunerfinn.com/">https://molunerfinn.com/</a><br>主题文档：<a href="https://molunerfinn.com/hexo-theme-melody-doc/zh-Hans/">https://molunerfinn.com/hexo-theme-melody-doc/zh-Hans/</a></p>
+<p><strong>aurora</strong></p>
+<p><img src="2268589-20210911233758366-1952977503.png" alt="image"></p>
+<p>预览地址：<a href="https://tridiamond.tech/">https://tridiamond.tech/</a><br>项目地址：<a href="https://github.com/auroral-ui/hexo-theme-aurora">https://github.com/auroral-ui/hexo-theme-aurora</a></p>
+<p><strong>butterfly</strong></p>
+<p><img src="2268589-20210911230630791-494189771.gif" alt="image"></p>
+<p>预览地址：<a href="https://butterfly.js.org/">https://butterfly.js.org/</a><br>项目地址：<a href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a></p>
+<p><strong>yun</strong></p>
+<p><img src="2268589-20210911235009378-2042686826.png" alt="image"></p>
+<p>示例：<a href="https://www.yunyoujun.cn/">https://www.yunyoujun.cn/</a><br>使用文档：<a href="https://yun.yunyoujun.cn/">https://yun.yunyoujun.cn/</a><br>项目地址： <a href="https://github.com/YunYouJun/hexo-theme-yun">https://github.com/YunYouJun/hexo-theme-yun</a></p>
+<p><strong>diaspora</strong></p>
+<p><img src="2268589-20210911233108788-1522300683.png" alt="image"></p>
+<p>预览地址：<a href="https://fech.in/">https://fech.in/</a><br>项目地址：<a href="https://github.com/Fechin/hexo-theme-diaspora">https://github.com/Fechin/hexo-theme-diaspora</a></p>
+<p><strong>ayer</strong></p>
+<p><img src="ayer.jpg" alt="image"></p>
+<p>预览地址：<a href="https://shen-yu.gitee.io/">https://shen-yu.gitee.io/</a><br>项目地址：<a href="https://github.com/Shen-Yu/hexo-theme-ayer">https://github.com/Shen-Yu/hexo-theme-ayer</a><br>国内镜像：<a href="https://gitee.com/shen-yu/hexo-theme-ayer">https://gitee.com/shen-yu/hexo-theme-ayer</a></p>
+<p><strong>Bamboo</strong></p>
+<p><img src="2268589-20210911235937926-2052169566.jpg" alt="image"></p>
+<p>示例：<a href="https://yuang01.github.io/">https://yuang01.github.io/</a><br>项目地址：<a href="https://github.com/yuang01/hexo-theme-bamboo">https://github.com/yuang01/hexo-theme-bamboo</a></p>
+<p><strong>XOXO</strong></p>
+<p><img src="15641.jpg" alt="img"></p>
+<p>示例：<a href="https://blog.0xff000000.com/">https://blog.0xff000000.com/</a></p>
+<p>地址：<a href="https://github.com/KevinOfNeu/hexo-theme-xoxo">https://github.com/KevinOfNeu/hexo-theme-xoxo</a></p>
+<p><strong>sky</strong></p>
+<p><img src="tesatat.jpg" alt="img"></p>
+<p>示例：<a href="https://ijinxin.github.io/blog/">https://ijinxin.github.io/blog/</a></p>
+<p>地址：<a href="https://github.com/iJinxin/hexo-theme-sky">https://github.com/iJinxin/hexo-theme-sky</a></p>
+<p><strong>replica</strong></p>
+<p><img src="156as4fd.jpg" alt="img"></p>
+<p>示例：<a href="https://hiitea.io/tech/">https://hiitea.io/tech/</a></p>
+<p>地址：<a href="https://github.com/sabrinaluo/hexo-theme-replica">https://github.com/sabrinaluo/hexo-theme-replica</a></p>
+<p><strong>ochuunn</strong></p>
+<p><img src="5a6s41d564165.jpg" alt="img"></p>
+<p>示例：<a href="https://ochukai.github.io/">https://ochukai.github.io/</a></p>
+<p>地址：<a href="https://github.com/ochukai/hexo-theme-ochuunn">https://github.com/ochukai/hexo-theme-ochuunn</a></p>
+<p><strong>polarbear</strong></p>
+<p><img src="54165465.jpg" alt="img"></p>
+<p>示例：<a href="https://d2fan.com/">https://d2fan.com/</a></p>
+<p>地址：<a href="https://github.com/frostfan/hexo-theme-polarbear">https://github.com/frostfan/hexo-theme-polarbear</a></p>
+<p>**Fluid **</p>
+<p><img src="564654654.jpg" alt="img"></p>
+<p>示例：<a href="https://zkqiang.cn/">https://zkqiang.cn/</a></p>
+<p>地址： <a href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://www.zhihu.com/question/24422335/answer/1632402674?utm_id=0">https://www.zhihu.com/question/24422335/answer/1632402674?utm_id=0</a></p>
+<p><a href="https://www.bilibili.com/read/cv18186390/">https://www.bilibili.com/read/cv18186390/</a></p>
+<p><a href="http://code.skyheng.com/post/63199.html">http://code.skyheng.com/post/63199.html</a></p>
+<p><a href="https://www.bilibili.com/read/cv4499195/">https://www.bilibili.com/read/cv4499195/</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/491537945">https://zhuanlan.zhihu.com/p/491537945</a></p>
+<p><a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+]]></content>
+      <categories>
+        <category>Others</category>
+      </categories>
+      <tags>
+        <tag>随便记记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript同步、异步、回调</title>
+    <url>/2020/07/30/js-Synchronous-Asynchronous/</url>
+    <content><![CDATA[<p>​	今天在对之前写的插件进行更新的时候遇到了js回调函数异步执行的问题，自己尝试了很久，最后百度一下才得到了解决，写下这篇文章是为了简单的总结下吧。</p>
+<pre><code class="javascript">var details = document.getElementsByClassName(&#39;tx_detail&#39;)
+for(var y=1;y&lt;details.length;y++)&#123;
+    var items = details[y].getElementsByClassName(&#39;item&#39;)
+    for(var x=0;x&lt;items.length;x++)&#123;
+        var a = details[y].getElementsByTagName(&#39;a&#39;);
+        if(a.length==0)&#123;
+            a = details[y].getElementsByTagName(&#39;span&#39;)
+        &#125;
+        localforage.getItem(a[x].innerText.toLowerCase(),function(err,value)&#123;
+            if(value!=null)&#123;
+                a[x].innerText = &#39;L:&#39;+value;
+            &#125;
+        &#125;)
+    &#125;
+&#125;
+</code></pre>
+<p>​	在使用localforage读取数据的时候，getItem有个回调函数读取结果传到回调函数中的value参数中，在函数函数体中进行value的处理，实际测试中发现，赋值语句a[x].innerText &#x3D; ‘L:’+value总是对a中最后一个元素进行赋值。</p>
+<p>​	之前遇到的没有循环嵌套的情况，我的处理方式是增加一个tmp变量，在localforage的回调函数的最后将tmp自增，如下代码所示：</p>
+<pre><code class="javascript">function addTag(ethTag)&#123;
+    var tmp = 0
+    for(var x =0;x&lt;ethTag.length;x++)&#123;
+        localforage.getItem(ethTag[x].innerText.toLowerCase()).then(function(value)&#123;
+            if(value!=null)&#123;
+                ethTag[tmp].innerText = &#39;L:&#39;+value;
+            &#125;
+            tmp = tmp + 1
+        &#125;).catch(function(err) &#123;
+            // 当出错时，此处代码运行
+            console.log(err);
+        &#125;);
+    &#125;
+&#125;
+</code></pre>
+<p>​	对于循环嵌套的代码，处理如下：</p>
+<pre><code class="javascript">var details = document.getElementsByClassName(&#39;tx_detail&#39;)
+var temp1 = 1;
+for(var y=1;y&lt;details.length;y++)&#123;
+    var items = details[y].getElementsByClassName(&#39;item&#39;)
+    var temp2 = 0
+    for(var x=0;x&lt;items.length;x++)&#123;
+            var a = details[y].getElementsByTagName(&#39;a&#39;);
+            if(a.length==0)&#123;
+                a = details[y].getElementsByTagName(&#39;span&#39;)
+            &#125;
+            localforage.getItem(a[x].innerText.toLowerCase()).then(function(value)&#123;
+                var temp
+                if(details[temp1].getElementsByTagName(&#39;a&#39;)!=null)&#123;
+                    temp = details[temp1].getElementsByTagName(&#39;a&#39;)
+                &#125;else&#123;
+                    temp = details[temp1].getElementsByTagName(&#39;span&#39;)
+                &#125;
+                if(value!=null)&#123;
+                    temp[temp2].innerText = &#39;L:&#39;+value;
+                &#125;												console.log(temp1,temp2,value,details[temp1].getElementsByClassName(&#39;item&#39;).length)
+                temp2=temp2+1
+                if(temp2==details[temp1].getElementsByClassName(&#39;item&#39;).length)&#123;
+                    temp1 = temp1 + 1
+                    temp2= 0
+                &#125;
+            &#125;).catch(function(err) &#123;
+                console.log(err);
+            &#125;);
+    &#125;
+&#125;
+</code></pre>
+<p>​	实际上这样的处理方式不仅使得代码变得臃肿，而且处理效率也很低。</p>
+<hr>
+<p>​	在CSDN上看到一篇文章：<a href="https://blog.csdn.net/u010297791/article/details/71158212">JavaScript同步、异步、回调执行顺序分析</a>，本文后面部分正是基于这篇文章所总结的。</p>
+<p>​	文章中作者提到一个口令的：</p>
+<blockquote>
+<p>同步优先、异步靠边、回调垫底</p>
+</blockquote>
+<p>​	对于以下代码：</p>
+<pre><code class="javascript">for (var i = 0; i &lt; 5; i++) &#123;
+    setTimeout(function() &#123;
+        console.log(i);
+    &#125;, 1000);
+&#125;
+ 
+console.log(i);
+</code></pre>
+<p>​	没有接触js之前，我一直都以为输出的结果会是：0 1 2 3 4 5</p>
+<p>​	而实际上，输出结果为：5 5 5 5 5 5 </p>
+<p>​	正如上面那篇文章中的作者所描述的一样，for循环和最后的那个console是同步执行的，所以for循环执行完毕之后在执行最后的console语句。</p>
+<p>​	setTimeout的回调函数因为是垫底，所以会是最后执行。而事实上也是如此，执行最后那个console语句的时候，回调函数一次都没有执行，如下图所示：</p>
+<p><img src="img1.gif" alt="最终效果"></p>
+<p>​	上图中可以看到，首先会输出一个5，过了一会后，几乎是同时输出了另外的5个5。</p>
+<blockquote>
+<p>​	JavaScript同步的代码是在堆栈中顺序执行的，而setTimeout回调会先放到消息队列，for循环每执行一次，就会放一个setTimeout到消息队列排队等候，当同步的代码执行完了，再去调用消息队列的回调方法。</p>
+<p>​	在这个经典例子中，也就是说，先执行for循环，按顺序放了5个setTimeout回调到消息队列，然后for循环结束，下面还有一个同步的console，执行完console之后，堆栈中已经没有同步的代码了，就去消息队列找，发现找到了5个setTimeout。</p>
+</blockquote>
+<p>​	作者提到了两种方式达到输出0 1 2 3 4 5的效果：</p>
+<p>​	一是使用let：</p>
+<blockquote>
+<p>使用 let 语句声明一个变量，该变量的范围限于声明它的块中。 可以在声明变量时为变量赋值，也可以稍后在脚本中给变量赋值。  </p>
+<p>let是ES6语法，ES5中的变量作用域是函数，而let语法的作用域是当前块，在这里就是for循环体。在这里，let本质上就是形成了一个闭包。</p>
+</blockquote>
+<pre><code class="javascript">for(let i = 0; i &lt; 5; ++i) &#123;
+    setTimeout(function() &#123;
+        console.log(i);
+    &#125;, 1000);
+&#125;
+console.log(i)
+</code></pre>
+<p>使用let与下面这种是一样的意思：</p>
+<pre><code class="javascript">var loop = function (_i) &#123;
+    setTimeout(function() &#123;
+        console.log(&#39;2：&#39;, _i);
+    &#125;, 1000);
+&#125;;
+ 
+for (var _i = 0; _i &lt; 5; _i++) &#123;
+    loop(_i);
+&#125;
+</code></pre>
+<p><img src="img2.gif" alt="img2"></p>
+<p>​	报错的原因是最后那个console所输出的i在整段代码中未定义，let声明的变量旨在所在代码块{}有效。</p>
+<p>二是使用闭包的方式：</p>
+<blockquote>
+<p>阮一峰的讲解</p>
+<p>闭包的概念：</p>
+<p>​	闭包就是能够读取其他函数内部变量的函数。</p>
+<p>​	由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
+<p>​	所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
+<p>​	闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
+<p>​	关于闭包：<a href="https://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html">学习Javascript闭包（Closure）</a></p>
+</blockquote>
+<pre><code class="javascript">for (var i = 1; i &lt;=20; i++)&#123;
+    (function (i) &#123;
+        setTimeout(function timer() &#123;
+            console.log(i);
+        &#125;, i*1000)
+    &#125;)(i);
+&#125;
+</code></pre>
+<p><img src="img3.gif" alt="img3"></p>
+<p>​	闭包方式是将i作为函数的参数传入函数内部，作用域是整个函数中，故外部i的变化不影响已经传入函数的i。</p>
+<p>​	循环展开效果如下所示：</p>
+<pre><code class="javascript">
+(function()&#123;
+    var count = 0;
+    setTimeout( function timer() &#123;
+        console.log(count);
+    &#125;, count * 1000 );
+&#125;)()
+(function()&#123;
+    var count = 1;
+    setTimeout( function timer() &#123;
+        console.log(count);
+    &#125;, count * 1000 );
+&#125;)()
+(function()&#123;
+    var count = 2;
+    setTimeout( function timer() &#123;
+        console.log(count);
+    &#125;, count * 1000 );
+&#125;)()
+(function()&#123;
+    var count = 3;
+    setTimeout( function timer() &#123;
+        console.log(count);
+    &#125;, count * 1000 );
+&#125;)()
+(function()&#123;
+    var count = 4;
+    setTimeout( function timer() &#123;
+        console.log(count);
+    &#125;, count * 1000 );
+&#125;)()
+(function()&#123;
+    var count = 5;
+    setTimeout( function timer() &#123;
+        console.log(count);
+    &#125;, count * 1000 );
+&#125;)()
+</code></pre>
+<hr>
+<p>​	问题到上面就已经得到了解决，下面主要是记录下对于异步、同步、setTimeout、Promise以及async的学习。</p>
+<p>​	通过分析代码来对执行顺序进行学习：</p>
+<pre><code class="javascript">async function async1() &#123;
+   console.log(&#39;async1 start&#39;)
+   await async2()
+   console.log(&#39;async1 end&#39;)
+&#125;
+async function async2() &#123;
+   console.log(&#39;async2&#39;)
+&#125;
+console.log(&#39;script start&#39;)
+setTimeout(() =&gt; &#123;
+    console.log(&#39;setTimeout&#39;)
+&#125;,0)
+async1()
+new Promise((resolve) =&gt; &#123;
+    console.log(&#39;promise1&#39;)
+    resolve()
+&#125;).then(() =&gt; &#123;
+    console.log(&#39;promise2&#39;)
+&#125;)
+console.log(&#39;script end&#39;)
+</code></pre>
+<p>​	在chrome中的执行结果是这样的：</p>
+<p><img src="img4.png" alt="image-20200731163631941"></p>
+<p>​	前面几行定义了两个async函数：</p>
+<pre><code class="javascript">async function async1() &#123;
+   console.log(&#39;async1 start&#39;)
+   await async2()
+   console.log(&#39;async1 end&#39;)
+&#125;
+async function async2() &#123;
+   console.log(&#39;async2&#39;)
+&#125;
+</code></pre>
+<p>​	然后是：</p>
+<pre><code class="javascript">console.log(&#39;script start&#39;)
+</code></pre>
+<p>​	在控制台中首先输出了 script start。</p>
+<p>​	接着代码继续向下执行，遇到setTimeout，因为回调函数垫底执行，其回调函数被放入任务队列中，等待同步执行完毕后在进行执行。</p>
+<p>​	执行async1函数：</p>
+<pre><code class="javascript">async1()
+</code></pre>
+<p>​	由于async1函数有async标记，当调用async函数的时候会返回一个Promise对象，Promise对象是立即执行的，然后输出async1 start。</p>
+<p>​	而后到了await async2()，在async里遇到await它会使async函数暂停执行，执行完async里的await内容后将后续的内容扔入到浏览器的任务队列里面去。所以控制台会先输出async2，然后再回到async1中，将async1没有执行的部分扔到了任务队列里面去。（现在任务队列里面有一个setTimeout和一个async1的后续内容）。</p>
+<p>​	然后是Promise:</p>
+<pre><code>new Promise((resolve) =&gt; &#123;
+    console.log(&#39;promise1&#39;)
+    resolve()
+&#125;).then(() =&gt; &#123;
+    console.log(&#39;promise2&#39;)
+&#125;)
+console.log(&#39;script end&#39;)
+</code></pre>
+<p>​	Promise是立即执行的，输出promise1，然后执行resolve：</p>
+<blockquote>
+<p><strong>resolve函数的作用是</strong>，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去。</p>
+</blockquote>
+<p>​	resolve执行完毕后，马上应该执行.then中的内容，但其内容是个回调函数，所以被放入任务队列中。</p>
+<p>​	同步执行的最后执行console.log(‘script end’)，输出script end之后，开始执行异步的任务队列中内容。</p>
+<blockquote>
+<p>setTimeout会在最后执行，就好比css权重的优先级，setTimeout的优先级没有async和promise级别高（其实async和promise是一样的，因为调用async方法时就是返回一个promise对象）</p>
+</blockquote>
+<p>​	队列是先进先出的顺序，所以接下来的输出是：</p>
+<pre><code>async1 end
+promise2
+setTimeout
+</code></pre>
+<hr>
+<p>参考文章：</p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures</a></p>
+<p><a href="https://blog.csdn.net/weixin_43606158/article/details/91360230">https://blog.csdn.net/weixin_43606158/article/details/91360230</a></p>
+<p><a href="https://blog.csdn.net/u010297791/article/details/71158212">https://blog.csdn.net/u010297791/article/details/71158212</a></p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -1750,345 +2087,11 @@ function injectCustomJs(jsPath)
 <p><img src="image-20220522232205825.png" alt="image-20220522232205825"></p>
 ]]></content>
       <categories>
-        <category>区块链</category>
+        <category>BlockChain</category>
       </categories>
       <tags>
         <tag>Etherscan</tag>
         <tag>Chrome插件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一些看起来不错的主题</title>
-    <url>/2023/08/04/hexo-themes/</url>
-    <content><![CDATA[<p><strong>NEXT</strong></p>
-<p><img src="NextSchemes3.png" alt="image"></p>
-<p>具体介绍：<a href="http://theme-next.iissnan.com/">http://theme-next.iissnan.com/</a><br>项目地址：<a href="https://github.com/iissnan/hexo-theme-next/">https://github.com/iissnan/hexo-theme-next/</a></p>
-<p><strong>stellar</strong></p>
-<p><img src="2268589-20210911230942914-1791629455.png" alt="image"></p>
-<p>预览地址：<a href="https://xaoxuu.com/wiki/stellar/#%E7%A4%BA%E4%BE%8B%E5%8D%9A%E5%AE%A2">https://xaoxuu.com/wiki/stellar/#示例博客</a><br>使用介绍：<a href="https://xaoxuu.com/wiki/stellar/">https://xaoxuu.com/wiki/stellar/</a><br>项目地址：<a href="https://github.com/xaoxuu/hexo-theme-stellar">https://github.com/xaoxuu/hexo-theme-stellar</a></p>
-<p><strong>pure</strong></p>
-<p><img src="2268589-20210911232117373-1876501138.png" alt="image"></p>
-<p>预览地址：<a href="https://blog.cofess.com/">https://blog.cofess.com/</a><br>项目地址：<a href="https://github.com/cofess/hexo-theme-pure">https://github.com/cofess/hexo-theme-pure</a></p>
-<p><strong>nexmoe</strong></p>
-<p><img src="2268589-20210911231739654-1341713180.png" alt="image"></p>
-<p>预览地址：<a href="https://nexmoe.com/">https://nexmoe.com/</a><br>项目地址：<a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe">https://github.com/theme-nexmoe/hexo-theme-nexmoe</a></p>
-<p><strong>melody</strong></p>
-<p><img src="2268589-20210911232502000-330052950.png" alt="image"></p>
-<p>预览地址：<a href="https://molunerfinn.com/">https://molunerfinn.com/</a><br>主题文档：<a href="https://molunerfinn.com/hexo-theme-melody-doc/zh-Hans/">https://molunerfinn.com/hexo-theme-melody-doc/zh-Hans/</a></p>
-<p><strong>aurora</strong></p>
-<p><img src="2268589-20210911233758366-1952977503.png" alt="image"></p>
-<p>预览地址：<a href="https://tridiamond.tech/">https://tridiamond.tech/</a><br>项目地址：<a href="https://github.com/auroral-ui/hexo-theme-aurora">https://github.com/auroral-ui/hexo-theme-aurora</a></p>
-<p><strong>butterfly</strong></p>
-<p><img src="2268589-20210911230630791-494189771.gif" alt="image"></p>
-<p>预览地址：<a href="https://butterfly.js.org/">https://butterfly.js.org/</a><br>项目地址：<a href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a></p>
-<p><strong>yun</strong></p>
-<p><img src="2268589-20210911235009378-2042686826.png" alt="image"></p>
-<p>示例：<a href="https://www.yunyoujun.cn/">https://www.yunyoujun.cn/</a><br>使用文档：<a href="https://yun.yunyoujun.cn/">https://yun.yunyoujun.cn/</a><br>项目地址： <a href="https://github.com/YunYouJun/hexo-theme-yun">https://github.com/YunYouJun/hexo-theme-yun</a></p>
-<p><strong>diaspora</strong></p>
-<p><img src="2268589-20210911233108788-1522300683.png" alt="image"></p>
-<p>预览地址：<a href="https://fech.in/">https://fech.in/</a><br>项目地址：<a href="https://github.com/Fechin/hexo-theme-diaspora">https://github.com/Fechin/hexo-theme-diaspora</a></p>
-<p><strong>ayer</strong></p>
-<p><img src="ayer.jpg" alt="image"></p>
-<p>预览地址：<a href="https://shen-yu.gitee.io/">https://shen-yu.gitee.io/</a><br>项目地址：<a href="https://github.com/Shen-Yu/hexo-theme-ayer">https://github.com/Shen-Yu/hexo-theme-ayer</a><br>国内镜像：<a href="https://gitee.com/shen-yu/hexo-theme-ayer">https://gitee.com/shen-yu/hexo-theme-ayer</a></p>
-<p><strong>Bamboo</strong></p>
-<p><img src="2268589-20210911235937926-2052169566.jpg" alt="image"></p>
-<p>示例：<a href="https://yuang01.github.io/">https://yuang01.github.io/</a><br>项目地址：<a href="https://github.com/yuang01/hexo-theme-bamboo">https://github.com/yuang01/hexo-theme-bamboo</a></p>
-<p><strong>XOXO</strong></p>
-<p><img src="15641.jpg" alt="img"></p>
-<p>示例：<a href="https://blog.0xff000000.com/">https://blog.0xff000000.com/</a></p>
-<p>地址：<a href="https://github.com/KevinOfNeu/hexo-theme-xoxo">https://github.com/KevinOfNeu/hexo-theme-xoxo</a></p>
-<p><strong>sky</strong></p>
-<p><img src="tesatat.jpg" alt="img"></p>
-<p>示例：<a href="https://ijinxin.github.io/blog/">https://ijinxin.github.io/blog/</a></p>
-<p>地址：<a href="https://github.com/iJinxin/hexo-theme-sky">https://github.com/iJinxin/hexo-theme-sky</a></p>
-<p><strong>replica</strong></p>
-<p><img src="156as4fd.jpg" alt="img"></p>
-<p>示例：<a href="https://hiitea.io/tech/">https://hiitea.io/tech/</a></p>
-<p>地址：<a href="https://github.com/sabrinaluo/hexo-theme-replica">https://github.com/sabrinaluo/hexo-theme-replica</a></p>
-<p><strong>ochuunn</strong></p>
-<p><img src="5a6s41d564165.jpg" alt="img"></p>
-<p>示例：<a href="https://ochukai.github.io/">https://ochukai.github.io/</a></p>
-<p>地址：<a href="https://github.com/ochukai/hexo-theme-ochuunn">https://github.com/ochukai/hexo-theme-ochuunn</a></p>
-<p><strong>polarbear</strong></p>
-<p><img src="54165465.jpg" alt="img"></p>
-<p>示例：<a href="https://d2fan.com/">https://d2fan.com/</a></p>
-<p>地址：<a href="https://github.com/frostfan/hexo-theme-polarbear">https://github.com/frostfan/hexo-theme-polarbear</a></p>
-<p>**Fluid **</p>
-<p><img src="564654654.jpg" alt="img"></p>
-<p>示例：<a href="https://zkqiang.cn/">https://zkqiang.cn/</a></p>
-<p>地址： <a href="https://github.com/fluid-dev/hexo-theme-fluid">https://github.com/fluid-dev/hexo-theme-fluid</a></p>
-<hr>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="https://www.zhihu.com/question/24422335/answer/1632402674?utm_id=0">https://www.zhihu.com/question/24422335/answer/1632402674?utm_id=0</a></p>
-<p><a href="https://www.bilibili.com/read/cv18186390/">https://www.bilibili.com/read/cv18186390/</a></p>
-<p><a href="http://code.skyheng.com/post/63199.html">http://code.skyheng.com/post/63199.html</a></p>
-<p><a href="https://www.bilibili.com/read/cv4499195/">https://www.bilibili.com/read/cv4499195/</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/491537945">https://zhuanlan.zhihu.com/p/491537945</a></p>
-<p><a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
-]]></content>
-      <tags>
-        <tag>随便记记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript同步、异步、回调</title>
-    <url>/2020/07/30/js-Synchronous-Asynchronous/</url>
-    <content><![CDATA[<p>​	今天在对之前写的插件进行更新的时候遇到了js回调函数异步执行的问题，自己尝试了很久，最后百度一下才得到了解决，写下这篇文章是为了简单的总结下吧。</p>
-<pre><code class="javascript">var details = document.getElementsByClassName(&#39;tx_detail&#39;)
-for(var y=1;y&lt;details.length;y++)&#123;
-    var items = details[y].getElementsByClassName(&#39;item&#39;)
-    for(var x=0;x&lt;items.length;x++)&#123;
-        var a = details[y].getElementsByTagName(&#39;a&#39;);
-        if(a.length==0)&#123;
-            a = details[y].getElementsByTagName(&#39;span&#39;)
-        &#125;
-        localforage.getItem(a[x].innerText.toLowerCase(),function(err,value)&#123;
-            if(value!=null)&#123;
-                a[x].innerText = &#39;L:&#39;+value;
-            &#125;
-        &#125;)
-    &#125;
-&#125;
-</code></pre>
-<p>​	在使用localforage读取数据的时候，getItem有个回调函数读取结果传到回调函数中的value参数中，在函数函数体中进行value的处理，实际测试中发现，赋值语句a[x].innerText &#x3D; ‘L:’+value总是对a中最后一个元素进行赋值。</p>
-<p>​	之前遇到的没有循环嵌套的情况，我的处理方式是增加一个tmp变量，在localforage的回调函数的最后将tmp自增，如下代码所示：</p>
-<pre><code class="javascript">function addTag(ethTag)&#123;
-    var tmp = 0
-    for(var x =0;x&lt;ethTag.length;x++)&#123;
-        localforage.getItem(ethTag[x].innerText.toLowerCase()).then(function(value)&#123;
-            if(value!=null)&#123;
-                ethTag[tmp].innerText = &#39;L:&#39;+value;
-            &#125;
-            tmp = tmp + 1
-        &#125;).catch(function(err) &#123;
-            // 当出错时，此处代码运行
-            console.log(err);
-        &#125;);
-    &#125;
-&#125;
-</code></pre>
-<p>​	对于循环嵌套的代码，处理如下：</p>
-<pre><code class="javascript">var details = document.getElementsByClassName(&#39;tx_detail&#39;)
-var temp1 = 1;
-for(var y=1;y&lt;details.length;y++)&#123;
-    var items = details[y].getElementsByClassName(&#39;item&#39;)
-    var temp2 = 0
-    for(var x=0;x&lt;items.length;x++)&#123;
-            var a = details[y].getElementsByTagName(&#39;a&#39;);
-            if(a.length==0)&#123;
-                a = details[y].getElementsByTagName(&#39;span&#39;)
-            &#125;
-            localforage.getItem(a[x].innerText.toLowerCase()).then(function(value)&#123;
-                var temp
-                if(details[temp1].getElementsByTagName(&#39;a&#39;)!=null)&#123;
-                    temp = details[temp1].getElementsByTagName(&#39;a&#39;)
-                &#125;else&#123;
-                    temp = details[temp1].getElementsByTagName(&#39;span&#39;)
-                &#125;
-                if(value!=null)&#123;
-                    temp[temp2].innerText = &#39;L:&#39;+value;
-                &#125;												console.log(temp1,temp2,value,details[temp1].getElementsByClassName(&#39;item&#39;).length)
-                temp2=temp2+1
-                if(temp2==details[temp1].getElementsByClassName(&#39;item&#39;).length)&#123;
-                    temp1 = temp1 + 1
-                    temp2= 0
-                &#125;
-            &#125;).catch(function(err) &#123;
-                console.log(err);
-            &#125;);
-    &#125;
-&#125;
-</code></pre>
-<p>​	实际上这样的处理方式不仅使得代码变得臃肿，而且处理效率也很低。</p>
-<hr>
-<p>​	在CSDN上看到一篇文章：<a href="https://blog.csdn.net/u010297791/article/details/71158212">JavaScript同步、异步、回调执行顺序分析</a>，本文后面部分正是基于这篇文章所总结的。</p>
-<p>​	文章中作者提到一个口令的：</p>
-<blockquote>
-<p>同步优先、异步靠边、回调垫底</p>
-</blockquote>
-<p>​	对于以下代码：</p>
-<pre><code class="javascript">for (var i = 0; i &lt; 5; i++) &#123;
-    setTimeout(function() &#123;
-        console.log(i);
-    &#125;, 1000);
-&#125;
- 
-console.log(i);
-</code></pre>
-<p>​	没有接触js之前，我一直都以为输出的结果会是：0 1 2 3 4 5</p>
-<p>​	而实际上，输出结果为：5 5 5 5 5 5 </p>
-<p>​	正如上面那篇文章中的作者所描述的一样，for循环和最后的那个console是同步执行的，所以for循环执行完毕之后在执行最后的console语句。</p>
-<p>​	setTimeout的回调函数因为是垫底，所以会是最后执行。而事实上也是如此，执行最后那个console语句的时候，回调函数一次都没有执行，如下图所示：</p>
-<p><img src="img1.gif" alt="最终效果"></p>
-<p>​	上图中可以看到，首先会输出一个5，过了一会后，几乎是同时输出了另外的5个5。</p>
-<blockquote>
-<p>​	JavaScript同步的代码是在堆栈中顺序执行的，而setTimeout回调会先放到消息队列，for循环每执行一次，就会放一个setTimeout到消息队列排队等候，当同步的代码执行完了，再去调用消息队列的回调方法。</p>
-<p>​	在这个经典例子中，也就是说，先执行for循环，按顺序放了5个setTimeout回调到消息队列，然后for循环结束，下面还有一个同步的console，执行完console之后，堆栈中已经没有同步的代码了，就去消息队列找，发现找到了5个setTimeout。</p>
-</blockquote>
-<p>​	作者提到了两种方式达到输出0 1 2 3 4 5的效果：</p>
-<p>​	一是使用let：</p>
-<blockquote>
-<p>使用 let 语句声明一个变量，该变量的范围限于声明它的块中。 可以在声明变量时为变量赋值，也可以稍后在脚本中给变量赋值。  </p>
-<p>let是ES6语法，ES5中的变量作用域是函数，而let语法的作用域是当前块，在这里就是for循环体。在这里，let本质上就是形成了一个闭包。</p>
-</blockquote>
-<pre><code class="javascript">for(let i = 0; i &lt; 5; ++i) &#123;
-    setTimeout(function() &#123;
-        console.log(i);
-    &#125;, 1000);
-&#125;
-console.log(i)
-</code></pre>
-<p>使用let与下面这种是一样的意思：</p>
-<pre><code class="javascript">var loop = function (_i) &#123;
-    setTimeout(function() &#123;
-        console.log(&#39;2：&#39;, _i);
-    &#125;, 1000);
-&#125;;
- 
-for (var _i = 0; _i &lt; 5; _i++) &#123;
-    loop(_i);
-&#125;
-</code></pre>
-<p><img src="img2.gif" alt="img2"></p>
-<p>​	报错的原因是最后那个console所输出的i在整段代码中未定义，let声明的变量旨在所在代码块{}有效。</p>
-<p>二是使用闭包的方式：</p>
-<blockquote>
-<p>阮一峰的讲解</p>
-<p>闭包的概念：</p>
-<p>​	闭包就是能够读取其他函数内部变量的函数。</p>
-<p>​	由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成”定义在一个函数内部的函数”。</p>
-<p>​	所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。</p>
-<p>​	闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。</p>
-<p>​	关于闭包：<a href="https://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html">学习Javascript闭包（Closure）</a></p>
-</blockquote>
-<pre><code class="javascript">for (var i = 1; i &lt;=20; i++)&#123;
-    (function (i) &#123;
-        setTimeout(function timer() &#123;
-            console.log(i);
-        &#125;, i*1000)
-    &#125;)(i);
-&#125;
-</code></pre>
-<p><img src="img3.gif" alt="img3"></p>
-<p>​	闭包方式是将i作为函数的参数传入函数内部，作用域是整个函数中，故外部i的变化不影响已经传入函数的i。</p>
-<p>​	循环展开效果如下所示：</p>
-<pre><code class="javascript">
-(function()&#123;
-    var count = 0;
-    setTimeout( function timer() &#123;
-        console.log(count);
-    &#125;, count * 1000 );
-&#125;)()
-(function()&#123;
-    var count = 1;
-    setTimeout( function timer() &#123;
-        console.log(count);
-    &#125;, count * 1000 );
-&#125;)()
-(function()&#123;
-    var count = 2;
-    setTimeout( function timer() &#123;
-        console.log(count);
-    &#125;, count * 1000 );
-&#125;)()
-(function()&#123;
-    var count = 3;
-    setTimeout( function timer() &#123;
-        console.log(count);
-    &#125;, count * 1000 );
-&#125;)()
-(function()&#123;
-    var count = 4;
-    setTimeout( function timer() &#123;
-        console.log(count);
-    &#125;, count * 1000 );
-&#125;)()
-(function()&#123;
-    var count = 5;
-    setTimeout( function timer() &#123;
-        console.log(count);
-    &#125;, count * 1000 );
-&#125;)()
-</code></pre>
-<hr>
-<p>​	问题到上面就已经得到了解决，下面主要是记录下对于异步、同步、setTimeout、Promise以及async的学习。</p>
-<p>​	通过分析代码来对执行顺序进行学习：</p>
-<pre><code class="javascript">async function async1() &#123;
-   console.log(&#39;async1 start&#39;)
-   await async2()
-   console.log(&#39;async1 end&#39;)
-&#125;
-async function async2() &#123;
-   console.log(&#39;async2&#39;)
-&#125;
-console.log(&#39;script start&#39;)
-setTimeout(() =&gt; &#123;
-    console.log(&#39;setTimeout&#39;)
-&#125;,0)
-async1()
-new Promise((resolve) =&gt; &#123;
-    console.log(&#39;promise1&#39;)
-    resolve()
-&#125;).then(() =&gt; &#123;
-    console.log(&#39;promise2&#39;)
-&#125;)
-console.log(&#39;script end&#39;)
-</code></pre>
-<p>​	在chrome中的执行结果是这样的：</p>
-<p><img src="img4.png" alt="image-20200731163631941"></p>
-<p>​	前面几行定义了两个async函数：</p>
-<pre><code class="javascript">async function async1() &#123;
-   console.log(&#39;async1 start&#39;)
-   await async2()
-   console.log(&#39;async1 end&#39;)
-&#125;
-async function async2() &#123;
-   console.log(&#39;async2&#39;)
-&#125;
-</code></pre>
-<p>​	然后是：</p>
-<pre><code class="javascript">console.log(&#39;script start&#39;)
-</code></pre>
-<p>​	在控制台中首先输出了 script start。</p>
-<p>​	接着代码继续向下执行，遇到setTimeout，因为回调函数垫底执行，其回调函数被放入任务队列中，等待同步执行完毕后在进行执行。</p>
-<p>​	执行async1函数：</p>
-<pre><code class="javascript">async1()
-</code></pre>
-<p>​	由于async1函数有async标记，当调用async函数的时候会返回一个Promise对象，Promise对象是立即执行的，然后输出async1 start。</p>
-<p>​	而后到了await async2()，在async里遇到await它会使async函数暂停执行，执行完async里的await内容后将后续的内容扔入到浏览器的任务队列里面去。所以控制台会先输出async2，然后再回到async1中，将async1没有执行的部分扔到了任务队列里面去。（现在任务队列里面有一个setTimeout和一个async1的后续内容）。</p>
-<p>​	然后是Promise:</p>
-<pre><code>new Promise((resolve) =&gt; &#123;
-    console.log(&#39;promise1&#39;)
-    resolve()
-&#125;).then(() =&gt; &#123;
-    console.log(&#39;promise2&#39;)
-&#125;)
-console.log(&#39;script end&#39;)
-</code></pre>
-<p>​	Promise是立即执行的，输出promise1，然后执行resolve：</p>
-<blockquote>
-<p><strong>resolve函数的作用是</strong>，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去。</p>
-</blockquote>
-<p>​	resolve执行完毕后，马上应该执行.then中的内容，但其内容是个回调函数，所以被放入任务队列中。</p>
-<p>​	同步执行的最后执行console.log(‘script end’)，输出script end之后，开始执行异步的任务队列中内容。</p>
-<blockquote>
-<p>setTimeout会在最后执行，就好比css权重的优先级，setTimeout的优先级没有async和promise级别高（其实async和promise是一样的，因为调用async方法时就是返回一个promise对象）</p>
-</blockquote>
-<p>​	队列是先进先出的顺序，所以接下来的输出是：</p>
-<pre><code>async1 end
-promise2
-setTimeout
-</code></pre>
-<hr>
-<p>参考文章：</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures</a></p>
-<p><a href="https://blog.csdn.net/weixin_43606158/article/details/91360230">https://blog.csdn.net/weixin_43606158/article/details/91360230</a></p>
-<p><a href="https://blog.csdn.net/u010297791/article/details/71158212">https://blog.csdn.net/u010297791/article/details/71158212</a></p>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -2104,6 +2107,9 @@ setTimeout
 <p>没有 X-Requested-With: XMLHttpRequest：</p>
 <p><img src="img2.png" alt="image-20200827154337346"></p>
 ]]></content>
+      <categories>
+        <category>Others</category>
+      </categories>
       <tags>
         <tag>随便记记</tag>
       </tags>
@@ -2248,12 +2254,281 @@ settings = get_project_settings()
 <p>完结<em>★,°</em>:.☆(￣▽￣)&#x2F;$:<em>.°★</em> 。。</p>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>Python</category>
       </categories>
       <tags>
         <tag>scrapy</tag>
-        <tag>python</tag>
         <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些有用的工具资源</title>
+    <url>/2023/08/15/some-useful-resources/</url>
+    <content><![CDATA[<h4 id="CTF"><a href="#CTF" class="headerlink" title="CTF"></a>CTF</h4><blockquote>
+<ul>
+<li><a href="https://chainflag.org/">chainflag</a></li>
+<li><a href="https://ethernaut.openzeppelin.com/">ethernaut</a> </li>
+<li><a href="https://ctf.paradigm.xyz/">Paradigm CTF</a></li>
+<li><a href="https://github.com/blockthreat/blocksec-ctfs">Blocksec CTFs</a></li>
+<li><a href="https://capturetheether.com/">capturetheether</a></li>
+<li><a href="https://www.damnvulnerabledefi.xyz/">Damn Vulnerable DeFi</a></li>
+</ul>
+</blockquote>
+<h4 id="漏洞库"><a href="#漏洞库" class="headerlink" title="漏洞库"></a>漏洞库</h4><blockquote>
+<ul>
+<li><a href="https://www.dasp.co/">DASP Top 10</a></li>
+<li><a href="https://github.com/sigp/solidity-security-blog">Solidity security blog</a></li>
+<li><a href="https://github.com/SunWeb3Sec/DeFiVulnLabs">SunWeb3Sec DeFiVulnLabs</a></li>
+<li><a href="https://github.com/sec-bit/awesome-buggy-erc20-tokens">Awesome Buggy ERC20 Tokens</a></li>
+</ul>
+</blockquote>
+<h4 id="赏金平台"><a href="#赏金平台" class="headerlink" title="赏金平台"></a>赏金平台</h4><blockquote>
+<ul>
+<li><a href="https://dvpnet.io/home">dvpnet</a></li>
+<li><a href="https://bugrap.io/">bugrap</a></li>
+<li><a href="https://www.sherlock.xyz/">sherlock</a></li>
+<li><a href="https://immunefi.com/">immunefi</a></li>
+<li><a href="https://code4rena.com/">code4rena</a></li>
+</ul>
+</blockquote>
+<h4 id="合约审计"><a href="#合约审计" class="headerlink" title="合约审计"></a>合约审计</h4><blockquote>
+<ul>
+<li><a href="https://eth.antcave.club/5aac5l2v5oiq5li65pm66io95zci57qm5a6h6k6h5zgypya">如何成为智能合约审计员?</a></li>
+<li><a href="https://upgradehub.xyz/">upgradehub | 合约代码升级对比</a></li>
+<li><a href="https://swcregistry.io/">Smart Contract Weakness Classification</a></li>
+<li><a href="https://a16zcrypto.com/posts/article/smart-contract-security-checklist-web3-development/">A Simple Checklist for Web3 Development</a></li>
+<li><a href="https://blog.pessimistic.io/auditors-advice-math-solidity-gas-optimizations-part-1-3-a99c478d2ebb">Auditor’s Advice: Math, Solidity &amp; Gas Optimizations</a></li>
+<li><a href="https://learn.openzeppelin.com/security-audits/readiness-guide">A Comprehensive Smart Contract Audit Readiness Guide</a></li>
+<li><a href="https://www.contractreader.io/">contractreader | The best way to read and understand smart contracts</a></li>
+<li><a href="https://blog.sigmaprime.io/solidity-security.html">Solidity Security: Comprehensive list of known attack vectors and common anti-patterns</a></li>
+</ul>
+</blockquote>
+<h4 id="攻击事件"><a href="#攻击事件" class="headerlink" title="攻击事件"></a>攻击事件</h4><blockquote>
+<ul>
+<li><a href="https://rekt.news/">rekt</a></li>
+<li><a href="https://de.fi/rekt-database">rekt-database</a></li>
+<li><a href="https://hacked.slowmist.io/">SlowMist Hacked</a></li>
+<li><a href="https://github.com/SunWeb3Sec/DeFiHackLabs">DeFi Hacks Reproduce - Foundry</a></li>
+<li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4ODQ3NTM2OA==&action=getalbum&album_id=1378653641065857025">慢雾安全团队区块链安全技术文章</a></li>
+<li><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NTg2MzE5NA==&action=getalbum&album_id=2709507207360397313">Beosin安全团队区块链安全技术文章</a></li>
+</ul>
+</blockquote>
+<h4 id="开发文档"><a href="#开发文档" class="headerlink" title="开发文档"></a>开发文档</h4><blockquote>
+<ul>
+<li><a href="https://www.iczc.me/post/rust-lang-note/">Rust入门笔记</a></li>
+<li><a href="https://goethereumbook.org/zh/">用Go来做以太坊开发</a></li>
+<li><a href="https://learnblockchain.cn/article/2383">以太坊全栈开发完全指南</a></li>
+<li><a href="https://solidity-by-example.org/">Solidity by Example v0.8.17</a></li>
+<li><a href="https://learnblockchain.cn/column/1">全面掌握Solidity智能合约开发</a></li>
+<li><a href="https://learnblockchain.cn/books/geth/part7/storage.html">详解SOLIDITY合约数据存储布局</a></li>
+<li><a href="https://blog.csdn.net/weixin_38746124/article/details/81166737">智能合约升级模式介绍 — 入门篇</a></li>
+<li><a href="https://blog.openzeppelin.com/proxy-patterns">Proxy Patterns | OPENZEPPELIN</a></li>
+<li><a href="https://github.com/33357/smartcontract-apps/blob/main/Special/New.md">如何入门智能合约开发 (by 33357)</a></li>
+<li><a href="https://github.com/ConsenSys/smart-contract-best-practices/blob/master/README-zh.md">最佳安全开发指南 (by ConsenSys)</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLNLh1EyDzSGP-lkNCBhCptoJ-NMu_BYfS">Solidity &amp; Ethereum Application Development</a></li>
+<li><a href="https://github.com/lmy375/peth">Peth | A python Ethereum utilities command-line tool</a></li>
+<li><a href="https://medium.com/loopring-chinese/%E6%95%B0%E5%8D%83%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%BB%A3%E5%B8%81%E5%90%88%E7%BA%A6%E4%B8%8D%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98%E6%B5%AE%E5%87%BA%E6%B0%B4%E9%9D%A2-%E4%B8%A5%E9%87%8D%E5%BD%B1%E5%93%8Ddapp%E7%94%9F%E6%80%81-a6a9432b1796">数千以太坊代币合约不兼容问题浮出水面，严重影响DAPP生态</a></li>
+<li><a href="https://github.com/Dapp-Learning-DAO/Dapp-Learning">Definitive Guide for Decentralized-app(Dapp) Development on Blockchain</a></li>
+</ul>
+</blockquote>
+<h4 id="开发测试工具"><a href="#开发测试工具" class="headerlink" title="开发测试工具"></a>开发测试工具</h4><blockquote>
+<ul>
+<li><a href="https://remix.ethereum.org/">remix</a></li>
+<li><a href="https://trufflesuite.com/">truffle</a></li>
+<li><a href="https://hardhat.org/">hardhat</a></li>
+<li><a href="https://eth-brownie.readthedocs.io/en/stable/">brownie</a></li>
+<li><a href="https://trufflesuite.com/ganache/">ganache</a></li>
+<li><a href="https://etherscan.deth.net/">deth.net</a></li>
+<li><a href="https://dapp.tools/">DappTools</a></li>
+<li><a href="https://www.smartcontractgui.xyz/">smartcontractgui</a></li>
+<li><a href="https://abi.hashex.org/">Online ABI Encoder</a></li>
+<li><a href="https://github.com/microbecode/evm-connector">evm-connector | github</a></li>
+<li><a href="https://book.getfoundry.sh/">foundry | 模拟执行、测试、复现</a></li>
+<li><a href="https://evmconnector.dev/">evmconnector | 任意合约进行交互的工具</a></li>
+</ul>
+</blockquote>
+<h4 id="合约分析"><a href="#合约分析" class="headerlink" title="合约分析"></a>合约分析</h4><blockquote>
+<ul>
+<li><a href="https://mythx.io/">mythx</a></li>
+<li><a href="https://github.com/crytic/slither">slither</a></li>
+<li><a href="https://github.com/ConsenSys/mythril">mythril</a></li>
+<li><a href="https://github.com/enzymefinance/oyente">Oyente</a></li>
+<li><a href="https://github.com/crytic/echidna">echidna</a></li>
+<li><a href="https://fuzz.land/">fuzzland</a></li>
+<li><a href="https://github.com/trailofbits/manticore">manticore</a></li>
+<li><a href="https://github.com/nascentxyz/pyrometer">pyrometer</a></li>
+<li><a href="https://github.com/fuzzland/ityfuzz">fuzzland | github</a></li>
+<li><a href="https://evm.storage/">Explore contract storage</a></li>
+<li><a href="https://tintinweb.github.io/smart-contract-storage-viewer/">smart-contract-storage-viewer</a></li>
+<li><a href="https://www.evm.codes/">Ethereum Virtual Machine Opcodes Interactive Reference</a></li>
+</ul>
+</blockquote>
+<h4 id="水龙头"><a href="#水龙头" class="headerlink" title="水龙头"></a>水龙头</h4><blockquote>
+<ul>
+<li><a href="https://ont.io/faucet/">ont</a></li>
+<li><a href="https://goerli-faucet.pk910.de/">goerli</a></li>
+<li><a href="https://faucet.quicknode.com/ethereum/goerli/">goerli</a></li>
+<li><a href="https://faucet.polygon.technology/">polygon</a></li>
+<li><a href="https://faucets.chain.link/">chainlink</a></li>
+<li><a href="https://app.mycrypto.com/faucet">mycrypto</a></li>
+<li><a href="https://stakely.io/en/faucet/polygon-matic">polygon-matic</a></li>
+<li><a href="https://mumbaifaucet.com/">mumbaifaucet</a></li>
+<li><a href="https://github.com/arddluma/awesome-list-testnet-faucets">awesome-list-testnet-faucets</a></li>
+</ul>
+</blockquote>
+<h4 id="反编译工具"><a href="#反编译工具" class="headerlink" title="反编译工具"></a>反编译工具</h4><blockquote>
+<ul>
+<li><a href="https://oko.palkeo.com/">oko</a></li>
+<li><a href="https://library.dedaub.com/">dedaub</a></li>
+<li><a href="https://ethervm.io/decompile/">ethervm</a></li>
+<li><a href="https://www.pnfsoftware.com/blog/ethereum-smart-contract-decompiler/">JEB Decompiler</a></li>
+<li><a href="https://github.com/sc-forks/solidity-coverage">solidity-coverage</a></li>
+<li><a href="https://etherscan.io/bytecode-decompiler">bytecode-decompiler</a></li>
+</ul>
+</blockquote>
+<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><blockquote>
+<ul>
+<li><a href="https://www.cs.cmu.edu/~aldrich/courses/17-355-19sp/">Program Analysis</a></li>
+<li><a href="https://pascal-group.bitbucket.io/teaching.html">Static Program Analysis</a></li>
+<li><a href="https://xiongyingfei.github.io/SA/2022/main.htm">软件分析技术（Software Analysis）</a></li>
+<li><a href="https://blog.csdn.net/zhang971105/article/details/109046458">静态程序分析(Static Program Analysis)介绍</a></li>
+<li><a href="https://github.com/learnerLj/geth-analyze/tree/main">研究智能合约安全必需的合约执行机制 | learnerLj</a></li>
+</ul>
+</blockquote>
+<h4 id="监控分析"><a href="#监控分析" class="headerlink" title="监控分析"></a>监控分析</h4><blockquote>
+<ul>
+<li><a href="https://forta.org/">Forta Threat Intelligence</a></li>
+<li><a href="https://github.com/blockscout/blockscout">blockscout | 审查分析EVM类区块链的工具</a></li>
+<li><a href="https://dashboard.tenderly.co/">tenderly | 以仪表盘形式提供可靠的智能合约监视和审计</a></li>
+<li><a href="https://github.com/Neufund/smart-contract-watch">smart-contract-watch | A smart contract monitoring tool</a></li>
+</ul>
+</blockquote>
+<h4 id="交易分析"><a href="#交易分析" class="headerlink" title="交易分析"></a>交易分析</h4><blockquote>
+<ul>
+<li><a href="https://ethtx.info/">ethtx | ETH</a></li>
+<li><a href="https://explorer.phalcon.xyz/">phalcon | 多链</a></li>
+<li><a href="https://dashboard.tenderly.co/explorer">tenderly | 多链</a></li>
+<li><a href="https://traceview.tofreedom.me/">TraceView | 多链</a></li>
+<li><a href="https://openchain.xyz/trace">openchain trace | 多链</a></li>
+<li><a href="https://tags.eth.samczsun.com/">Ethereum Tags Database</a></li>
+<li><a href="https://github.com/EthTx/ethtx_ce">Ethereum transaction decoder (community version)</a></li>
+</ul>
+</blockquote>
+<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><blockquote>
+<ul>
+<li><a href="https://explorer.fuse.io/">fuse</a></li>
+<li><a href="https://www.oklink.com/cn/oktc">oklink</a></li>
+<li><a href="https://explorer.solana.com/">solana</a></li>
+<li><a href="https://ftmscan.com/">ftmscan</a></li>
+<li><a href="https://bscscan.com/">bscscan</a></li>
+<li><a href="https://tronscan.org/#/">tronscan</a></li>
+<li><a href="https://arbiscan.io/">arbiscan</a></li>
+<li><a href="https://www.hecoinfo.com/">hecoinfo</a></li>
+<li><a href="https://ethplorer.io/zh/">ethplorer</a></li>
+<li><a href="https://www.rebellious.io/explorer/">rebellious</a></li>
+<li><a href="https://etherscan.io/">etherscan</a></li>
+<li><a href="https://optimistic.etherscan.io/">optimistic</a></li>
+<li><a href="https://snowtrace.io/">snowtrace</a></li>
+<li><a href="https://polygonscan.com/">polygonscan</a></li>
+<li><a href="https://solanabeach.io/">solanabeach</a></li>
+<li><a href="https://explorer.bitquery.io/">bitquery | 多链</a></li>
+<li><a href="https://blockchair.com/zh">blockchair | 多链</a></li>
+<li><a href="https://andromeda-explorer.metis.io/">andromeda-explorer</a></li>
+</ul>
+</blockquote>
+<h4 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h4><blockquote>
+<ul>
+<li><a href="https://www.infura.io/zh">infura</a></li>
+<li><a href="https://account.getblock.io/">getblock</a></li>
+<li><a href="https://www.blocknative.com/">blocknative</a></li>
+<li><a href="https://www.ankr.com/rpc/">ankr | 多链</a></li>
+<li><a href="https://chainlist.org/">chainlist | 多链</a></li>
+</ul>
+</blockquote>
+<h4 id="数据平台"><a href="#数据平台" class="headerlink" title="数据平台"></a>数据平台</h4><blockquote>
+<ul>
+<li><a href="https://xblock.pro/#/">xblock</a></li>
+<li><a href="https://debank.com/">debank</a></li>
+<li><a href="https://bitquery.io/">bitquery</a></li>
+<li><a href="https://icodrops.com/">icodrops</a></li>
+<li><a href="https://icoholder.com/">icoholder</a></li>
+<li><a href="https://www.coingecko.com/zh">coingecko</a></li>
+<li><a href="https://www.scopescan.ai/main">scopescan</a></li>
+<li><a href="https://cryptofees.info/">CryptoFees</a></li>
+<li><a href="https://apr999.com/">apy999 | 单币挖矿的收益率</a></li>
+<li><a href="https://chaineye.tools/cexFee">chaineye | 交易所充提币看板</a></li>
+<li><a href="https://opensea.io/rankings">OpenSea | 最大的NFT交易平台</a></li>
+<li><a href="https://dune.com/browse/dashboards">dune | 提供大量数据分析仪表板</a></li>
+<li><a href="https://app.intotheblock.com/">intotheblock | 最完整的链上分析</a></li>
+<li><a href="https://coverage.coinmetrics.io/">CoinMetrics | 提供丰富的链上数据</a></li>
+<li><a href="https://vfat.tools/">vfat | 各条链上DeFi应用中的挖矿情况</a></li>
+<li><a href="https://explore.flashbots.net/">MEV-Explore | 查询以太坊上的MEV活动</a></li>
+<li><a href="https://blog.csdn.net/jst888_k/article/details/116945563">基于以太坊链各平台rpc和水龙头信息收集</a></li>
+<li><a href="https://nansen.ai/">nansen | 分析并标记以太坊地址的链上活动</a></li>
+<li><a href="https://coinholmes.com/">coinholmes | AML Solution for Digital Assets</a></li>
+<li><a href="https://coin.dance/">Coin Dance | BTC、BCH、BSC、XEC 数据</a></li>
+<li><a href="https://defillama.com/">defillama | 支持几乎所有链上的大型DeFi项目</a></li>
+<li><a href="https://linen.app/interest-rates/">LoanScan | 以太坊中不同平台的存款和借款利率</a></li>
+<li><a href="https://ethgasstation.info/">ethgasstation | 实时查询以太坊链上交易的Gas Price</a></li>
+<li><a href="https://www.oklink.com/cn">oklink | 可查询公链、DeFi、GameFi、NFT的相关数据</a></li>
+<li><a href="https://watchtheburn.com/">watchtheburn | 实时查看EIP-1559之后的ETH销毁情况</a></li>
+<li><a href="https://tokenterminal.com/">Token Terminal | 提供传统财务指标来评估区块链和DApps</a></li>
+<li><a href="https://bitinfocharts.com/">BitInfoCharts | 提供公链的挖矿难度、区块奖励等基础数据</a></li>
+</ul>
+</blockquote>
+<h4 id="社区论坛"><a href="#社区论坛" class="headerlink" title="社区论坛"></a>社区论坛</h4><blockquote>
+<ul>
+<li><a href="https://ethresear.ch/">ethresear</a></li>
+<li><a href="https://forum.openzeppelin.com/c/general/16">openzeppelin</a></li>
+</ul>
+</blockquote>
+<h4 id="博客论文"><a href="#博客论文" class="headerlink" title="博客论文"></a>博客论文</h4><blockquote>
+<ul>
+<li><a href="https://u.naturaldao.io/be/">区块链概论</a></li>
+<li><a href="https://blog.wongssh.cf/">Wong’s Blog</a> </li>
+<li><a href="https://hackmd.io/@Nhlanhla">Nhlanhla Hasane</a></li>
+<li><a href="https://www.tofreedom.me/">Rivaill’s Notion Blog</a></li>
+<li><a href="https://scholar.google.com/citations?user=_F_wFPAAAAAJ&hl=en">Mirror.Tang | Salus Security</a></li>
+</ul>
+</blockquote>
+<h4 id="综合资源"><a href="#综合资源" class="headerlink" title="综合资源"></a>综合资源</h4><blockquote>
+<ul>
+<li><a href="https://learnblockchain.cn/manuals">各种文档</a></li>
+<li><a href="https://learnblockchain.cn/eth/">以太坊知识库</a></li>
+<li><a href="https://learnblockchain.cn/eth/dev/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90.html">安全分析工具</a></li>
+<li><a href="https://github.com/fltenwall/web3-awesome">web3-awesome</a></li>
+<li><a href="https://github.com/blockchainGuide/blockchainguide">blockchainGuide</a></li>
+<li><a href="https://github.com/bkrem/awesome-solidity">Awesome Solidity</a></li>
+<li><a href="https://docs.qq.com/sheet/DWGpKZnZXYVNVbVJs?tab=BB08J2">每周技术热点分享</a></li>
+<li><a href="https://github.com/slowmist/Knowledge-Base">慢雾安全团队知识库</a></li>
+<li><a href="https://binaries.soliditylang.org/bin/list.json">solidity 版本信息列表</a></li>
+<li><a href="https://l2beat.com/scaling/summary">l2beat | 跨链桥风险评估</a></li>
+<li><a href="https://hackmd.io/@gweicz/defi-toolkit">DeFi Toolkit by @gweicz</a></li>
+<li><a href="https://darkhandbook.io/">区块链黑暗森林自救手册</a></li>
+<li><a href="https://y1cunhui.github.io/uniswapV3-book-zh-cn/">Uniswap V3 Book 中文版</a></li>
+<li><a href="https://learnblockchain.cn/article/1792">以太坊可用RPC节点列表</a></li>
+<li><a href="https://learnblockchain.cn/article/2006">以太坊开发工具及资源大全</a></li>
+<li><a href="https://www.panewslab.com/zh/articledetails/1639654376071749.html">常用区块链数据工具网站汇总</a></li>
+<li><a href="https://mirror.xyz/zflab.eth/irL1_QBwNcRpDxDGuGjSSC_aqrTNAjLBu8zYmlPfgZY">加密圈常用的26类工具及网址</a></li>
+<li><a href="https://github.com/ConsenSys/ethereum-developer-tools-list/blob/master/README.md#testing-tools">Ethereum Developer Tools List</a></li>
+<li><a href="https://github.com/tintinweb/smart-contract-sanctuary-ethereum">Smart Contract Sanctuary - Ethereum</a></li>
+<li><a href="https://www.coursera.org/specializations/decentralized-finance-duke#courses">Decentralized Finance (DeFi) 专项课程</a></li>
+</ul>
+</blockquote>
+<hr>
+<p>参考链接：</p>
+<ul>
+<li><a href="https://www.blog-blockchain.xyz/audit/blockchian-study-material/">https://www.blog-blockchain.xyz/audit/blockchian-study-material/</a></li>
+<li><a href="https://learnblockchain.cn/eth/dev/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90.html">https://learnblockchain.cn/eth/dev/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>BlockChain</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+        <tag>learn</tag>
+        <tag>tools</tag>
       </tags>
   </entry>
   <entry>
@@ -2284,10 +2559,12 @@ settings = get_project_settings()
 <p><img src="image-20211024110254437.png" alt="image-20211024110254437"></p>
 ]]></content>
       <categories>
-        <category>win11</category>
+        <category>Others</category>
       </categories>
       <tags>
         <tag>windows</tag>
+        <tag>win11</tag>
+        <tag>WSA</tag>
       </tags>
   </entry>
 </search>

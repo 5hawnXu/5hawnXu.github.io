@@ -1,0 +1,501 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>一些有用的工具资源 | ShawnXu の 小窝</title><meta name="author" content="Shawn Xu,shawn@hxzy.me"><meta name="copyright" content="Shawn Xu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CTF  chainflag ethernaut  Paradigm CTF Blocksec CTFs capturetheether Damn Vulnerable DeFi   漏洞库  DASP Top 10 Solidity security blog SunWeb3Sec DeFiVulnLabs Awesome Buggy ERC20 Tokens   赏金平台  dvpnet bu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些有用的工具资源">
+<meta property="og:url" content="https://shawnxu.me/2023/08/15/some-useful-resources/">
+<meta property="og:site_name" content="ShawnXu の 小窝">
+<meta property="og:description" content="CTF  chainflag ethernaut  Paradigm CTF Blocksec CTFs capturetheether Damn Vulnerable DeFi   漏洞库  DASP Top 10 Solidity security blog SunWeb3Sec DeFiVulnLabs Awesome Buggy ERC20 Tokens   赏金平台  dvpnet bu">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://shawnxu.me/img/40.jpg">
+<meta property="article:published_time" content="2023-08-15T03:08:58.000Z">
+<meta property="article:modified_time" content="2023-08-15T10:43:02.470Z">
+<meta property="article:author" content="Shawn Xu">
+<meta property="article:tag" content="安全">
+<meta property="article:tag" content="learn">
+<meta property="article:tag" content="tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://shawnxu.me/img/40.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://shawnxu.me/2023/08/15/some-useful-resources/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?21618d9b00c278eb5b4bf1caa5e07c7a";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Shawn Xu","link":"链接: ","source":"来源: ShawnXu の 小窝","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '一些有用的工具资源',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: undefined,
+  isToc: true,
+  postUpdate: '2023-08-15 18:43:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/40.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="ShawnXu の 小窝"><span class="site-name">ShawnXu の 小窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">一些有用的工具资源</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-15T03:08:58.000Z" title="发表于 2023-08-15 11:08:58">2023-08-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-15T10:43:02.470Z" title="更新于 2023-08-15 18:43:02">2023-08-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/BlockChain/">BlockChain</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="一些有用的工具资源"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="CTF"><a href="#CTF" class="headerlink" title="CTF"></a>CTF</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://chainflag.org/">chainflag</a></li>
+<li><a target="_blank" rel="noopener" href="https://ethernaut.openzeppelin.com/">ethernaut</a> </li>
+<li><a target="_blank" rel="noopener" href="https://ctf.paradigm.xyz/">Paradigm CTF</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/blockthreat/blocksec-ctfs">Blocksec CTFs</a></li>
+<li><a target="_blank" rel="noopener" href="https://capturetheether.com/">capturetheether</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.damnvulnerabledefi.xyz/">Damn Vulnerable DeFi</a></li>
+</ul>
+</blockquote>
+<h4 id="漏洞库"><a href="#漏洞库" class="headerlink" title="漏洞库"></a>漏洞库</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.dasp.co/">DASP Top 10</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sigp/solidity-security-blog">Solidity security blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/SunWeb3Sec/DeFiVulnLabs">SunWeb3Sec DeFiVulnLabs</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sec-bit/awesome-buggy-erc20-tokens">Awesome Buggy ERC20 Tokens</a></li>
+</ul>
+</blockquote>
+<h4 id="赏金平台"><a href="#赏金平台" class="headerlink" title="赏金平台"></a>赏金平台</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://dvpnet.io/home">dvpnet</a></li>
+<li><a target="_blank" rel="noopener" href="https://bugrap.io/">bugrap</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.sherlock.xyz/">sherlock</a></li>
+<li><a target="_blank" rel="noopener" href="https://immunefi.com/">immunefi</a></li>
+<li><a target="_blank" rel="noopener" href="https://code4rena.com/">code4rena</a></li>
+</ul>
+</blockquote>
+<h4 id="合约审计"><a href="#合约审计" class="headerlink" title="合约审计"></a>合约审计</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://eth.antcave.club/5aac5l2v5oiq5li65pm66io95zci57qm5a6h6k6h5zgypya">如何成为智能合约审计员?</a></li>
+<li><a target="_blank" rel="noopener" href="https://upgradehub.xyz/">upgradehub | 合约代码升级对比</a></li>
+<li><a target="_blank" rel="noopener" href="https://swcregistry.io/">Smart Contract Weakness Classification</a></li>
+<li><a target="_blank" rel="noopener" href="https://a16zcrypto.com/posts/article/smart-contract-security-checklist-web3-development/">A Simple Checklist for Web3 Development</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.pessimistic.io/auditors-advice-math-solidity-gas-optimizations-part-1-3-a99c478d2ebb">Auditor’s Advice: Math, Solidity &amp; Gas Optimizations</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.openzeppelin.com/security-audits/readiness-guide">A Comprehensive Smart Contract Audit Readiness Guide</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.contractreader.io/">contractreader | The best way to read and understand smart contracts</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.sigmaprime.io/solidity-security.html">Solidity Security: Comprehensive list of known attack vectors and common anti-patterns</a></li>
+</ul>
+</blockquote>
+<h4 id="攻击事件"><a href="#攻击事件" class="headerlink" title="攻击事件"></a>攻击事件</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://rekt.news/">rekt</a></li>
+<li><a target="_blank" rel="noopener" href="https://de.fi/rekt-database">rekt-database</a></li>
+<li><a target="_blank" rel="noopener" href="https://hacked.slowmist.io/">SlowMist Hacked</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/SunWeb3Sec/DeFiHackLabs">DeFi Hacks Reproduce - Foundry</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU4ODQ3NTM2OA==&action=getalbum&album_id=1378653641065857025">慢雾安全团队区块链安全技术文章</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzg2NTg2MzE5NA==&action=getalbum&album_id=2709507207360397313">Beosin安全团队区块链安全技术文章</a></li>
+</ul>
+</blockquote>
+<h4 id="开发文档"><a href="#开发文档" class="headerlink" title="开发文档"></a>开发文档</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.iczc.me/post/rust-lang-note/">Rust入门笔记</a></li>
+<li><a target="_blank" rel="noopener" href="https://goethereumbook.org/zh/">用Go来做以太坊开发</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/article/2383">以太坊全栈开发完全指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://solidity-by-example.org/">Solidity by Example v0.8.17</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/column/1">全面掌握Solidity智能合约开发</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/books/geth/part7/storage.html">详解SOLIDITY合约数据存储布局</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38746124/article/details/81166737">智能合约升级模式介绍 — 入门篇</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.openzeppelin.com/proxy-patterns">Proxy Patterns | OPENZEPPELIN</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/33357/smartcontract-apps/blob/main/Special/New.md">如何入门智能合约开发 (by 33357)</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ConsenSys/smart-contract-best-practices/blob/master/README-zh.md">最佳安全开发指南 (by ConsenSys)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/playlist?list=PLNLh1EyDzSGP-lkNCBhCptoJ-NMu_BYfS">Solidity &amp; Ethereum Application Development</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/lmy375/peth">Peth | A python Ethereum utilities command-line tool</a></li>
+<li><a target="_blank" rel="noopener" href="https://medium.com/loopring-chinese/%E6%95%B0%E5%8D%83%E4%BB%A5%E5%A4%AA%E5%9D%8A%E4%BB%A3%E5%B8%81%E5%90%88%E7%BA%A6%E4%B8%8D%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98%E6%B5%AE%E5%87%BA%E6%B0%B4%E9%9D%A2-%E4%B8%A5%E9%87%8D%E5%BD%B1%E5%93%8Ddapp%E7%94%9F%E6%80%81-a6a9432b1796">数千以太坊代币合约不兼容问题浮出水面，严重影响DAPP生态</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Dapp-Learning-DAO/Dapp-Learning">Definitive Guide for Decentralized-app(Dapp) Development on Blockchain</a></li>
+</ul>
+</blockquote>
+<h4 id="开发测试工具"><a href="#开发测试工具" class="headerlink" title="开发测试工具"></a>开发测试工具</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://remix.ethereum.org/">remix</a></li>
+<li><a target="_blank" rel="noopener" href="https://trufflesuite.com/">truffle</a></li>
+<li><a target="_blank" rel="noopener" href="https://hardhat.org/">hardhat</a></li>
+<li><a target="_blank" rel="noopener" href="https://eth-brownie.readthedocs.io/en/stable/">brownie</a></li>
+<li><a target="_blank" rel="noopener" href="https://trufflesuite.com/ganache/">ganache</a></li>
+<li><a target="_blank" rel="noopener" href="https://etherscan.deth.net/">deth.net</a></li>
+<li><a target="_blank" rel="noopener" href="https://dapp.tools/">DappTools</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.smartcontractgui.xyz/">smartcontractgui</a></li>
+<li><a target="_blank" rel="noopener" href="https://abi.hashex.org/">Online ABI Encoder</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/microbecode/evm-connector">evm-connector | github</a></li>
+<li><a target="_blank" rel="noopener" href="https://book.getfoundry.sh/">foundry | 模拟执行、测试、复现</a></li>
+<li><a target="_blank" rel="noopener" href="https://evmconnector.dev/">evmconnector | 任意合约进行交互的工具</a></li>
+</ul>
+</blockquote>
+<h4 id="合约分析"><a href="#合约分析" class="headerlink" title="合约分析"></a>合约分析</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://mythx.io/">mythx</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/crytic/slither">slither</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ConsenSys/mythril">mythril</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/enzymefinance/oyente">Oyente</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/crytic/echidna">echidna</a></li>
+<li><a target="_blank" rel="noopener" href="https://fuzz.land/">fuzzland</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/trailofbits/manticore">manticore</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/nascentxyz/pyrometer">pyrometer</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/fuzzland/ityfuzz">fuzzland | github</a></li>
+<li><a target="_blank" rel="noopener" href="https://evm.storage/">Explore contract storage</a></li>
+<li><a target="_blank" rel="noopener" href="https://tintinweb.github.io/smart-contract-storage-viewer/">smart-contract-storage-viewer</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.evm.codes/">Ethereum Virtual Machine Opcodes Interactive Reference</a></li>
+</ul>
+</blockquote>
+<h4 id="水龙头"><a href="#水龙头" class="headerlink" title="水龙头"></a>水龙头</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ont.io/faucet/">ont</a></li>
+<li><a target="_blank" rel="noopener" href="https://goerli-faucet.pk910.de/">goerli</a></li>
+<li><a target="_blank" rel="noopener" href="https://faucet.quicknode.com/ethereum/goerli/">goerli</a></li>
+<li><a target="_blank" rel="noopener" href="https://faucet.polygon.technology/">polygon</a></li>
+<li><a target="_blank" rel="noopener" href="https://faucets.chain.link/">chainlink</a></li>
+<li><a target="_blank" rel="noopener" href="https://app.mycrypto.com/faucet">mycrypto</a></li>
+<li><a target="_blank" rel="noopener" href="https://stakely.io/en/faucet/polygon-matic">polygon-matic</a></li>
+<li><a target="_blank" rel="noopener" href="https://mumbaifaucet.com/">mumbaifaucet</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/arddluma/awesome-list-testnet-faucets">awesome-list-testnet-faucets</a></li>
+</ul>
+</blockquote>
+<h4 id="反编译工具"><a href="#反编译工具" class="headerlink" title="反编译工具"></a>反编译工具</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://oko.palkeo.com/">oko</a></li>
+<li><a target="_blank" rel="noopener" href="https://library.dedaub.com/">dedaub</a></li>
+<li><a target="_blank" rel="noopener" href="https://ethervm.io/decompile/">ethervm</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pnfsoftware.com/blog/ethereum-smart-contract-decompiler/">JEB Decompiler</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/sc-forks/solidity-coverage">solidity-coverage</a></li>
+<li><a target="_blank" rel="noopener" href="https://etherscan.io/bytecode-decompiler">bytecode-decompiler</a></li>
+</ul>
+</blockquote>
+<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cs.cmu.edu/~aldrich/courses/17-355-19sp/">Program Analysis</a></li>
+<li><a target="_blank" rel="noopener" href="https://pascal-group.bitbucket.io/teaching.html">Static Program Analysis</a></li>
+<li><a target="_blank" rel="noopener" href="https://xiongyingfei.github.io/SA/2022/main.htm">软件分析技术（Software Analysis）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhang971105/article/details/109046458">静态程序分析(Static Program Analysis)介绍</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/learnerLj/geth-analyze/tree/main">研究智能合约安全必需的合约执行机制 | learnerLj</a></li>
+</ul>
+</blockquote>
+<h4 id="监控分析"><a href="#监控分析" class="headerlink" title="监控分析"></a>监控分析</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://forta.org/">Forta Threat Intelligence</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/blockscout/blockscout">blockscout | 审查分析EVM类区块链的工具</a></li>
+<li><a target="_blank" rel="noopener" href="https://dashboard.tenderly.co/">tenderly | 以仪表盘形式提供可靠的智能合约监视和审计</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Neufund/smart-contract-watch">smart-contract-watch | A smart contract monitoring tool</a></li>
+</ul>
+</blockquote>
+<h4 id="交易分析"><a href="#交易分析" class="headerlink" title="交易分析"></a>交易分析</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ethtx.info/">ethtx | ETH</a></li>
+<li><a target="_blank" rel="noopener" href="https://explorer.phalcon.xyz/">phalcon | 多链</a></li>
+<li><a target="_blank" rel="noopener" href="https://dashboard.tenderly.co/explorer">tenderly | 多链</a></li>
+<li><a target="_blank" rel="noopener" href="https://traceview.tofreedom.me/">TraceView | 多链</a></li>
+<li><a target="_blank" rel="noopener" href="https://openchain.xyz/trace">openchain trace | 多链</a></li>
+<li><a target="_blank" rel="noopener" href="https://tags.eth.samczsun.com/">Ethereum Tags Database</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/EthTx/ethtx_ce">Ethereum transaction decoder (community version)</a></li>
+</ul>
+</blockquote>
+<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://explorer.fuse.io/">fuse</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.oklink.com/cn/oktc">oklink</a></li>
+<li><a target="_blank" rel="noopener" href="https://explorer.solana.com/">solana</a></li>
+<li><a target="_blank" rel="noopener" href="https://ftmscan.com/">ftmscan</a></li>
+<li><a target="_blank" rel="noopener" href="https://bscscan.com/">bscscan</a></li>
+<li><a target="_blank" rel="noopener" href="https://tronscan.org/#/">tronscan</a></li>
+<li><a target="_blank" rel="noopener" href="https://arbiscan.io/">arbiscan</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.hecoinfo.com/">hecoinfo</a></li>
+<li><a target="_blank" rel="noopener" href="https://ethplorer.io/zh/">ethplorer</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.rebellious.io/explorer/">rebellious</a></li>
+<li><a target="_blank" rel="noopener" href="https://etherscan.io/">etherscan</a></li>
+<li><a target="_blank" rel="noopener" href="https://optimistic.etherscan.io/">optimistic</a></li>
+<li><a target="_blank" rel="noopener" href="https://snowtrace.io/">snowtrace</a></li>
+<li><a target="_blank" rel="noopener" href="https://polygonscan.com/">polygonscan</a></li>
+<li><a target="_blank" rel="noopener" href="https://solanabeach.io/">solanabeach</a></li>
+<li><a target="_blank" rel="noopener" href="https://explorer.bitquery.io/">bitquery | 多链</a></li>
+<li><a target="_blank" rel="noopener" href="https://blockchair.com/zh">blockchair | 多链</a></li>
+<li><a target="_blank" rel="noopener" href="https://andromeda-explorer.metis.io/">andromeda-explorer</a></li>
+</ul>
+</blockquote>
+<h4 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.infura.io/zh">infura</a></li>
+<li><a target="_blank" rel="noopener" href="https://account.getblock.io/">getblock</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.blocknative.com/">blocknative</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.ankr.com/rpc/">ankr | 多链</a></li>
+<li><a target="_blank" rel="noopener" href="https://chainlist.org/">chainlist | 多链</a></li>
+</ul>
+</blockquote>
+<h4 id="数据平台"><a href="#数据平台" class="headerlink" title="数据平台"></a>数据平台</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://xblock.pro/#/">xblock</a></li>
+<li><a target="_blank" rel="noopener" href="https://debank.com/">debank</a></li>
+<li><a target="_blank" rel="noopener" href="https://bitquery.io/">bitquery</a></li>
+<li><a target="_blank" rel="noopener" href="https://icodrops.com/">icodrops</a></li>
+<li><a target="_blank" rel="noopener" href="https://icoholder.com/">icoholder</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.coingecko.com/zh">coingecko</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.scopescan.ai/main">scopescan</a></li>
+<li><a target="_blank" rel="noopener" href="https://cryptofees.info/">CryptoFees</a></li>
+<li><a target="_blank" rel="noopener" href="https://apr999.com/">apy999 | 单币挖矿的收益率</a></li>
+<li><a target="_blank" rel="noopener" href="https://chaineye.tools/cexFee">chaineye | 交易所充提币看板</a></li>
+<li><a target="_blank" rel="noopener" href="https://opensea.io/rankings">OpenSea | 最大的NFT交易平台</a></li>
+<li><a target="_blank" rel="noopener" href="https://dune.com/browse/dashboards">dune | 提供大量数据分析仪表板</a></li>
+<li><a target="_blank" rel="noopener" href="https://app.intotheblock.com/">intotheblock | 最完整的链上分析</a></li>
+<li><a target="_blank" rel="noopener" href="https://coverage.coinmetrics.io/">CoinMetrics | 提供丰富的链上数据</a></li>
+<li><a target="_blank" rel="noopener" href="https://vfat.tools/">vfat | 各条链上DeFi应用中的挖矿情况</a></li>
+<li><a target="_blank" rel="noopener" href="https://explore.flashbots.net/">MEV-Explore | 查询以太坊上的MEV活动</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/jst888_k/article/details/116945563">基于以太坊链各平台rpc和水龙头信息收集</a></li>
+<li><a target="_blank" rel="noopener" href="https://nansen.ai/">nansen | 分析并标记以太坊地址的链上活动</a></li>
+<li><a target="_blank" rel="noopener" href="https://coinholmes.com/">coinholmes | AML Solution for Digital Assets</a></li>
+<li><a target="_blank" rel="noopener" href="https://coin.dance/">Coin Dance | BTC、BCH、BSC、XEC 数据</a></li>
+<li><a target="_blank" rel="noopener" href="https://defillama.com/">defillama | 支持几乎所有链上的大型DeFi项目</a></li>
+<li><a target="_blank" rel="noopener" href="https://linen.app/interest-rates/">LoanScan | 以太坊中不同平台的存款和借款利率</a></li>
+<li><a target="_blank" rel="noopener" href="https://ethgasstation.info/">ethgasstation | 实时查询以太坊链上交易的Gas Price</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.oklink.com/cn">oklink | 可查询公链、DeFi、GameFi、NFT的相关数据</a></li>
+<li><a target="_blank" rel="noopener" href="https://watchtheburn.com/">watchtheburn | 实时查看EIP-1559之后的ETH销毁情况</a></li>
+<li><a target="_blank" rel="noopener" href="https://tokenterminal.com/">Token Terminal | 提供传统财务指标来评估区块链和DApps</a></li>
+<li><a target="_blank" rel="noopener" href="https://bitinfocharts.com/">BitInfoCharts | 提供公链的挖矿难度、区块奖励等基础数据</a></li>
+</ul>
+</blockquote>
+<h4 id="社区论坛"><a href="#社区论坛" class="headerlink" title="社区论坛"></a>社区论坛</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://ethresear.ch/">ethresear</a></li>
+<li><a target="_blank" rel="noopener" href="https://forum.openzeppelin.com/c/general/16">openzeppelin</a></li>
+</ul>
+</blockquote>
+<h4 id="博客论文"><a href="#博客论文" class="headerlink" title="博客论文"></a>博客论文</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://u.naturaldao.io/be/">区块链概论</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.wongssh.cf/">Wong’s Blog</a> </li>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/@Nhlanhla">Nhlanhla Hasane</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.tofreedom.me/">Rivaill’s Notion Blog</a></li>
+<li><a target="_blank" rel="noopener" href="https://scholar.google.com/citations?user=_F_wFPAAAAAJ&hl=en">Mirror.Tang | Salus Security</a></li>
+</ul>
+</blockquote>
+<h4 id="综合资源"><a href="#综合资源" class="headerlink" title="综合资源"></a>综合资源</h4><blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/manuals">各种文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/eth/">以太坊知识库</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/eth/dev/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90.html">安全分析工具</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/fltenwall/web3-awesome">web3-awesome</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/blockchainGuide/blockchainguide">blockchainGuide</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/bkrem/awesome-solidity">Awesome Solidity</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.qq.com/sheet/DWGpKZnZXYVNVbVJs?tab=BB08J2">每周技术热点分享</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/slowmist/Knowledge-Base">慢雾安全团队知识库</a></li>
+<li><a target="_blank" rel="noopener" href="https://binaries.soliditylang.org/bin/list.json">solidity 版本信息列表</a></li>
+<li><a target="_blank" rel="noopener" href="https://l2beat.com/scaling/summary">l2beat | 跨链桥风险评估</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/@gweicz/defi-toolkit">DeFi Toolkit by @gweicz</a></li>
+<li><a target="_blank" rel="noopener" href="https://darkhandbook.io/">区块链黑暗森林自救手册</a></li>
+<li><a target="_blank" rel="noopener" href="https://y1cunhui.github.io/uniswapV3-book-zh-cn/">Uniswap V3 Book 中文版</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/article/1792">以太坊可用RPC节点列表</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/article/2006">以太坊开发工具及资源大全</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.panewslab.com/zh/articledetails/1639654376071749.html">常用区块链数据工具网站汇总</a></li>
+<li><a target="_blank" rel="noopener" href="https://mirror.xyz/zflab.eth/irL1_QBwNcRpDxDGuGjSSC_aqrTNAjLBu8zYmlPfgZY">加密圈常用的26类工具及网址</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/ConsenSys/ethereum-developer-tools-list/blob/master/README.md#testing-tools">Ethereum Developer Tools List</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/tintinweb/smart-contract-sanctuary-ethereum">Smart Contract Sanctuary - Ethereum</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.coursera.org/specializations/decentralized-finance-duke#courses">Decentralized Finance (DeFi) 专项课程</a></li>
+</ul>
+</blockquote>
+<hr>
+<p>参考链接：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.blog-blockchain.xyz/audit/blockchian-study-material/">https://www.blog-blockchain.xyz/audit/blockchian-study-material/</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/eth/dev/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90.html">https://learnblockchain.cn/eth/dev/%E5%AE%89%E5%85%A8%E5%88%86%E6%9E%90.html</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://shawnxu.me">Shawn Xu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://shawnxu.me/2023/08/15/some-useful-resources/">https://shawnxu.me/2023/08/15/some-useful-resources/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://shawnxu.me" target="_blank">ShawnXu の 小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AE%89%E5%85%A8/">安全</a><a class="post-meta__tags" href="/tags/learn/">learn</a><a class="post-meta__tags" href="/tags/tools/">tools</a></div><div class="post_share"><div class="social-share" data-image="/img/40.jpg" data-sites="twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/08/04/hexo-themes/" title="一些看起来不错的主题"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/29.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">一些看起来不错的主题</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/11/09/Ethernaut%20WriteUp/" title="Zeppelin Ethernaut WriteUp"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/22.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-11-09</div><div class="title">Zeppelin Ethernaut WriteUp</div></div></a></div><div><a href="/2019/11/19/bypass-cdn/" title="信息收集——绕过CDN寻找真实IP"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/22.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-11-19</div><div class="title">信息收集——绕过CDN寻找真实IP</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Shawn Xu</div><div class="author-info__description">Cyber Security Engineer</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/5hawnxu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/5hawnxu" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:shawn@hxzy.me" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">世界上有一种生命，它的每一次死亡，都是为了归来!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#CTF"><span class="toc-number">1.</span> <span class="toc-text">CTF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">漏洞库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%8F%E9%87%91%E5%B9%B3%E5%8F%B0"><span class="toc-number">3.</span> <span class="toc-text">赏金平台</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E5%AE%A1%E8%AE%A1"><span class="toc-number">4.</span> <span class="toc-text">合约审计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E4%BA%8B%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">攻击事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3"><span class="toc-number">6.</span> <span class="toc-text">开发文档</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="toc-number">7.</span> <span class="toc-text">开发测试工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%88%E7%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">8.</span> <span class="toc-text">合约分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B4%E9%BE%99%E5%A4%B4"><span class="toc-number">9.</span> <span class="toc-text">水龙头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8D%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7"><span class="toc-number">10.</span> <span class="toc-text">反编译工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">11.</span> <span class="toc-text">代码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%91%E6%8E%A7%E5%88%86%E6%9E%90"><span class="toc-number">12.</span> <span class="toc-text">监控分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%98%93%E5%88%86%E6%9E%90"><span class="toc-number">13.</span> <span class="toc-text">交易分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">14.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RPC"><span class="toc-number">15.</span> <span class="toc-text">RPC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B9%B3%E5%8F%B0"><span class="toc-number">16.</span> <span class="toc-text">数据平台</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA%E8%AE%BA%E5%9D%9B"><span class="toc-number">17.</span> <span class="toc-text">社区论坛</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E8%AE%BA%E6%96%87"><span class="toc-number">18.</span> <span class="toc-text">博客论文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E8%B5%84%E6%BA%90"><span class="toc-number">19.</span> <span class="toc-text">综合资源</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/08/15/some-useful-resources/" title="一些有用的工具资源"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/40.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些有用的工具资源"/></a><div class="content"><a class="title" href="/2023/08/15/some-useful-resources/" title="一些有用的工具资源">一些有用的工具资源</a><time datetime="2023-08-15T03:08:58.000Z" title="发表于 2023-08-15 11:08:58">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/08/04/hexo-themes/" title="一些看起来不错的主题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/29.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一些看起来不错的主题"/></a><div class="content"><a class="title" href="/2023/08/04/hexo-themes/" title="一些看起来不错的主题">一些看起来不错的主题</a><time datetime="2023-08-04T07:40:58.000Z" title="发表于 2023-08-04 15:40:58">2023-08-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/28/Register-accounts-by-email-in-batches/" title="邮箱验证类注册账户"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/41.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="邮箱验证类注册账户"/></a><div class="content"><a class="title" href="/2021/11/28/Register-accounts-by-email-in-batches/" title="邮箱验证类注册账户">邮箱验证类注册账户</a><time datetime="2021-11-28T05:50:37.000Z" title="发表于 2021-11-28 13:50:37">2021-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/24/win11-and-wsa-install/" title="技嘉B365 Power安装win11及安卓子系统(WSA)"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/28.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="技嘉B365 Power安装win11及安卓子系统(WSA)"/></a><div class="content"><a class="title" href="/2021/10/24/win11-and-wsa-install/" title="技嘉B365 Power安装win11及安卓子系统(WSA)">技嘉B365 Power安装win11及安卓子系统(WSA)</a><time datetime="2021-10-24T02:20:35.000Z" title="发表于 2021-10-24 10:20:35">2021-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/08/27/mess/" title="乱七八糟"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/37.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="乱七八糟"/></a><div class="content"><a class="title" href="/2020/08/27/mess/" title="乱七八糟">乱七八糟</a><time datetime="2020-08-27T07:40:58.000Z" title="发表于 2020-08-27 15:40:58">2020-08-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By Shawn Xu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://shawnxu.me">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>function loadWaline () {
+  function initWaline () {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://commets-puce.vercel.app/',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  if (typeof Waline === 'object') initWaline()
+  else {
+    getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css').then(() => {
+      getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js').then(initWaline)
+    })
+  }
+}
+
+if ('Waline' === 'Waline' || !false) {
+  if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+  else setTimeout(loadWaline, 0)
+} else {
+  function loadOtherComment () {
+    loadWaline()
+  }
+}</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/fireworks.min.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = false;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
